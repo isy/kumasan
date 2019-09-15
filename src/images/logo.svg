@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="95px" height="92px" viewBox="0 0 95 92" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-mini</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon-mini" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <ellipse id="Oval" fill="#E7A469" fill-rule="nonzero" cx="73.05" cy="18.9" rx="8.25" ry="7.8"></ellipse>
+        <ellipse id="Oval" fill="#F2CD9C" fill-rule="nonzero" cx="72.45" cy="19.5" rx="4.65" ry="4.8"></ellipse>
+        <ellipse id="Oval" fill="#E7A469" fill-rule="nonzero" cx="23.25" cy="18.6" rx="8.25" ry="7.8"></ellipse>
+        <ellipse id="Oval" fill="#F2CD9C" fill-rule="nonzero" cx="23.55" cy="19.5" rx="4.65" ry="4.8"></ellipse>
+        <path d="M47.55,80.7 C67.6807791,80.7 84,65.1195093 84,45.9 C84,26.6804907 67.6807791,11.1 47.55,11.1 C27.4192209,11.1 11.1,26.6804907 11.1,45.9 C11.1,65.1195093 27.4192209,80.7 47.55,80.7 Z" id="Oval" fill="#E7A469" fill-rule="nonzero"></path>
+        <path d="M47.6241815,71.7 C51.9802787,71.7 56.5747373,70.892815 59.4667838,68.8030078 C61.8195554,67.1028834 63.045613,64.5538762 62.1,60.9 C59.9920316,52.7547486 55.524102,44.7 47.6241815,44.7 C39.724261,44.7 36.4820627,50.5826816 33.3201101,59.1804469 C30.1581574,67.7782123 39.724261,71.7 47.6241815,71.7 Z" id="Oval" fill="#F2CD9C" fill-rule="nonzero"></path>
+        <ellipse id="Oval" fill="#8B572A" fill-rule="nonzero" cx="47.7" cy="58.05" rx="4.5" ry="4.65"></ellipse>
+    </g>
+</svg>

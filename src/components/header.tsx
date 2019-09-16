@@ -1,14 +1,14 @@
-import { Link } from "gatsby"
-import React from "react"
+import { Link } from 'gatsby'
+import React from 'react'
 import styled from '@emotion/styled'
 
 import Logo from '../images/logo.svg'
 
 const Header: React.FC = () => (
   <Wrapper>
-        <Link to="/">
-          <Kuma src={Logo} alt="ロゴ" />
-        </Link>
+    <Link to="/">
+      <Kuma src={Logo} alt="ロゴ" />
+    </Link>
   </Wrapper>
 )
 

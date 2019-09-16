@@ -48,8 +48,8 @@ exports.onCreateWebpackConfig = ({ actions }) => {
       alias: {
         '@': resolve(__dirname, 'src'),
         '@utils': resolve(__dirname, 'src/utils'),
-        '@components': resolve(__dirname, 'src/components')
-      }
-    }
+        '@components': resolve(__dirname, 'src/components'),
+      },
+    },
   })
 }

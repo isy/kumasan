@@ -1,8 +1,7 @@
 import React from 'react'
 import SEO from '../components/seo'
 
-
-const PostTemplate = ()  => {
+const PostTemplate = () => {
   return (
     <div>
       <SEO title="" />

@@ -47,7 +47,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "gql-codegen": "graphql-codegen --config codegen.yml",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""

@@ -3,11 +3,7 @@ import styled from '@emotion/styled'
 
 import colors from '../utils/colors'
 
-const Footer: React.FC = () => (
-  <Wrapper>
-
-  </Wrapper>
-)
+const Footer: React.FC = () => <Wrapper></Wrapper>
 
 const Wrapper = styled.footer`
   background: ${colors.ebony};

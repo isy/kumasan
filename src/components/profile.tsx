@@ -4,8 +4,8 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 
 import Kuma from '../images/isy.svg'
 
-type Props  = {
-  className?: string,
+type Props = {
+  className?: string
 }
 
 const Profile: React.FC<Props> = ({ className }) => (
@@ -19,9 +19,7 @@ const Profile: React.FC<Props> = ({ className }) => (
         <Bio>ソフトウェアエンジニア👨‍💻</Bio>
       </Desc>
     </Prof>
-    <Share>
-      {/* <FontAwesomeIcon icon={['fab','twitter']} /> */}
-    </Share>
+    <Share>{/* <FontAwesomeIcon icon={['fab','twitter']} /> */}</Share>
   </Wrapper>
 )
 

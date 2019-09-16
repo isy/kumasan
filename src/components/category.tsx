@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
@@ -8,7 +8,9 @@ import colors from '../utils/colors'
 const Category: React.FC = () => (
   <CategoryList>
     <Innter>
-      <Item to="/" activeStyle={Active}>ALL</Item>
+      <Item to="/" activeStyle={Active}>
+        ALL
+      </Item>
       <Item to="/">DEV</Item>
       <Item to="/">SELF</Item>
       <Item to="/">OTHER</Item>
@@ -39,7 +41,7 @@ const Item = styled(Link)`
 `
 
 const Active = {
-  color: colors.standard
+  color: colors.standard,
 }
 
 export default Category

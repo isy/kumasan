@@ -5,10 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock } from '@fortawesome/free-solid-svg-icons'
 
 type Props = {
-  to: string,
-  imgsrc: string,
-  imgAlt: string,
-  className?: string,
+  to: string
+  imgsrc: string
+  imgAlt: string
+  className?: string
 }
 
 const Card: React.FC<Props> = ({ to, imgsrc, imgAlt, className }) => (
@@ -67,13 +67,13 @@ const HeroImg = styled.img`
 `
 
 const Meta = styled.div`
-    border-radius: 0 0 10px 10px;
-    margin: 10px 15px;
-    position: relative;
-    height: 150px;
-    @media screen and (max-width: 480px) {
-      height: 100px;
-    }
+  border-radius: 0 0 10px 10px;
+  margin: 10px 15px;
+  position: relative;
+  height: 150px;
+  @media screen and (max-width: 480px) {
+    height: 100px;
+  }
 `
 
 const Title = styled.p`

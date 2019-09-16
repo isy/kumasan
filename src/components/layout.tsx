@@ -5,15 +5,15 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { PropsWithChildren } from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import React, { PropsWithChildren } from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
 
 import colors from '../utils/colors'
 
-import Header from "./header"
+import Header from './header'
 import Footer from './footer'
-import "./layout.css"
+import './layout.css'
 
 type Props = {}
 

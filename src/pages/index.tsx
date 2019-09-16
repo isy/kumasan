@@ -1,12 +1,12 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
 import styled from '@emotion/styled'
 
 import { PageQuery } from '../graphqlTypes'
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from '../components/layout'
+import Image from '../components/image'
+import SEO from '../components/seo'
 import Card from '../components/card'
 import Profile from '../components/profile'
 import Category from '../components/category'
@@ -21,9 +21,9 @@ const IndexPage: React.FC<Props> = ({ data }) => (
     <Category />
     <Container>
       <ArticleList>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        // <div key={node.id}>
-        <Artile key={node.id} to="/" imgAlt='' imgsrc="" />
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          // <div key={node.id}>
+          <Artile key={node.id} to="/" imgAlt="" imgsrc="" />
           // <span>
           //     {node.frontmatter.title}{" "}
           //       — {node.frontmatter.date}

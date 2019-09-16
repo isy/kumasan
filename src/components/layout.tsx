@@ -38,8 +38,9 @@ const Layout: React.FC<PropsWithChildren<Props>> = ({ children }) => {
 }
 
 const Contents = styled.main`
-  witdth: 100%;
+  width: 100%;
   background: ${colors.snow};
+  padding: 70px 0 0 0;
 `
 
 export default Layout

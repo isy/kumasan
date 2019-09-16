@@ -8,10 +8,11 @@ type Props = {
   to: string,
   imgsrc: string,
   imgAlt: string,
+  className?: string,
 }
 
-const Card: React.FC<Props> = ({ to, imgsrc, imgAlt }) => (
-  <Link to={to}>
+const Card: React.FC<Props> = ({ to, imgsrc, imgAlt, className }) => (
+  <Link to={to} className={className}>
     <Wrapper>
       <Hero>
         <HeroImg src={imgsrc} alt={imgAlt} />
@@ -21,7 +22,6 @@ const Card: React.FC<Props> = ({ to, imgsrc, imgAlt }) => (
         <DateTime>
           <FontAwesomeIcon icon={faClock} />
           <Time>2019-09</Time>
-          <p>こんにちは</p>
         </DateTime>
       </Meta>
     </Wrapper>
@@ -33,11 +33,11 @@ const Wrapper = styled.article`
   flex-wrap: wrap;
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 1px 15px rgba(31, 45, 61, 0.15);
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3s ease-in-out;
   &:hover {
-    opacity: 0.9;
+    // opacity: 0.9;
+    box-shadow: 0 2px 15px rgba(202, 202, 202, 0.44);
   }
 `
 

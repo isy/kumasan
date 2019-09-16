@@ -199,7 +199,7 @@ html {
   box-sizing: inherit;
 } */
 body {
-  color: hsla(0, 0%, 0%, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   font-family: georgia, serif;
   font-weight: normal;
   word-wrap: break-word;
@@ -208,6 +208,11 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 /* img {
   max-width: 100%;

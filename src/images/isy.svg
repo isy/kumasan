@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="140px" viewBox="0 0 80 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <ellipse id="Oval" fill="#E7A469" fill-rule="nonzero" cx="53.5" cy="21.5" rx="15.5" ry="14.5"></ellipse>
+        <ellipse id="Oval" fill="#F2CD9C" fill-rule="nonzero" cx="52.5" cy="23" rx="8.5" ry="9"></ellipse>
+        <ellipse id="Oval" fill="#E7A469" fill-rule="nonzero" cx="5.5" cy="71" rx="68.5" ry="64"></ellipse>
+        <path d="M33.1950696,70.7819947 C27.1134688,69.4302462 23.6630249,62.1640284 25.4882875,54.5524429 C27.3135502,46.9408575 33.7233295,41.8662569 39.8049304,43.2180053 C45.8865312,44.5697538 49.3369751,51.8359716 47.5117125,59.4475571 C45.6864498,67.0591425 39.2766705,72.1337431 33.1950696,70.7819947 Z" id="Oval" fill="#FFFFFF" fill-rule="nonzero"></path>
+        <ellipse id="Oval" fill="#E6B523" fill-rule="nonzero" cx="41" cy="58.5" rx="6" ry="9.5"></ellipse>
+        <ellipse id="Oval" fill="#FFFFFF" fill-rule="nonzero" cx="37.5" cy="53.5" rx="1.5" ry="3.5"></ellipse>
+        <path d="M1.13987083,114 C16.0353438,114 32.3690326,105.899441 28.394412,90.8156425 C24.4197914,75.7318436 16.0353438,64 1.13987083,64 C-13.7556022,64 -19.868838,74.8938547 -25.8307689,90.8156425 C-31.7926998,106.73743 -13.7556022,114 1.13987083,114 Z" id="Oval" fill="#F2CD9C" fill-rule="nonzero"></path>
+        <circle id="Oval" fill="#8B572A" fill-rule="nonzero" cx="0.5" cy="92.5" r="8.5"></circle>
+    </g>
+</svg>

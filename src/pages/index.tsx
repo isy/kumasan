@@ -23,7 +23,7 @@ const IndexPage: React.FC<Props> = ({ data }) => (
       <ArticleList>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           // <div key={node.id}>
-          <Artile key={node.id} to="/" imgAlt="" imgsrc="" />
+          <Artile key={node.id} to={`/${node.fields.slug}`} imgAlt="" imgsrc="" />
           // <span>
           //     {node.frontmatter.title}{" "}
           //       — {node.frontmatter.date}
@@ -58,9 +58,13 @@ export const query = graphql`
       edges {
         node {
           id
+          fields {
+            slug
+          }
           frontmatter {
             title
-            date(formatString: "DD MMMM, YYYY")
+            category
+            date(formatString: "YYYY.MM.DD")
           }
           excerpt
         }

@@ -33,7 +33,7 @@ exports.createPages = async ({ graphql, actions }) => {
   `)
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
-      path: `/posts/${node.fields.slug}`,
+      path: node.fields.slug,
       component: path.resolve(`./src/templates/post.tsx`),
       context: {
         slug: node.fields.slug,
@@ -42,14 +42,14 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 }
 
-exports.onCreateWebpackConfig = ({ actions }) => {
-  actions.setWebpackConfig({
-    resolve: {
-      alias: {
-        '@': resolve(__dirname, 'src'),
-        '@utils': resolve(__dirname, 'src/utils'),
-        '@components': resolve(__dirname, 'src/components'),
-      },
-    },
-  })
-}
+// exports.onCreateWebpackConfig = ({ actions }) => {
+//   actions.setWebpackConfig({
+//     resolve: {
+//       alias: {
+//         '@': resolve(__dirname, 'src'),
+//         '@utils': resolve(__dirname, 'src/utils'),
+//         '@components': resolve(__dirname, 'src/components'),
+//       },
+//     },
+//   })
+// }

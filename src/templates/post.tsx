@@ -21,9 +21,25 @@ type Props = {
   data: PostQuery
 }
 
+type Share =  {
+  twitter: string
+  facebook: string
+  hatena: string
+  feedly: string
+}
+
 const PostTemplate: React.FC<Props> = ({ data }) => {
-  const { markdownRemark: { html, excerpt, frontmatter } } = data
+  const { site: { siteMetadata }, markdownRemark: { html, excerpt, fields, frontmatter } } = data
   const { title, category, date, thumb } = frontmatter
+
+  const share: Share = {
+    twitter: `https://twitter.com/intent/tweet?url=${siteMetadata.url}${fields.slug}&text=${
+      title
+    }｜@isytter`,
+    facebook: `https://www.facebook.com/sharer/sharer.php?u=${siteMetadata.url}${fields.slug}`,
+    hatena: `http://b.hatena.ne.jp/add?url=${siteMetadata.url}${fields.slug}`,
+    feedly: `https://feedly.com/i/subscription/feed/${siteMetadata.url}/feed.xml`
+  }
 
   return (
     <Layout>
@@ -45,12 +61,20 @@ const PostTemplate: React.FC<Props> = ({ data }) => {
 
           <Body>
             <Share>
-              <TwiiterIcon width='24px' />
-              <FacebookIcon width='24px' />
-              <HatenaIcon width='24px' />
-              <FeedlyIcon width='24px' />
+              <ShareItem href={share.twitter} target="_blank" rel="noopener">
+                <TwiiterIcon width='24px' />
+              </ShareItem>
+              <ShareItem href={share.facebook} target="_blank" rel="noopener">
+                <FacebookIcon width='24px' />
+              </ShareItem>
+              <ShareItem href={share.hatena} target="_blank" rel="noopener">
+                <HatenaIcon width='24px' />
+              </ShareItem>
+              <ShareItem href={share.feedly} target="_blank" rel="noopener">
+                <FeedlyIcon width='24px' />
+              </ShareItem>
             </Share>
-            <ArtileBody>
+            <ArtileBody className="md">
               <div dangerouslySetInnerHTML={{ __html: html }} />
             </ArtileBody>
           </Body>
@@ -62,9 +86,17 @@ const PostTemplate: React.FC<Props> = ({ data }) => {
 
 export const query = graphql`
   query Post($slug: String!) {
+    site {
+      siteMetadata {
+        url
+      }
+    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       excerpt(pruneLength: 120)
+      fields {
+        slug
+      }
       frontmatter {
         title
         category
@@ -188,6 +220,12 @@ const Share = styled.div`
   }
 `
 
+const ShareItem = styled.a`
+  &:hover{
+    opacity: 0.8;
+  }
+`
+
 const ArtileBody = styled.section`
   width: 85%;
   max-width: 900px;
@@ -199,6 +237,7 @@ const ArtileBody = styled.section`
   @media screen and (max-width: 499px) {
     padding: 20px 15px 5px 15px;
     width: 95%;
+    overflow-x: scroll;
   }
 `
 

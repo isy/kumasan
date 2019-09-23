@@ -22,10 +22,16 @@ const Wrapper = styled.header`
   top: 0;
   position: fixed;
   z-index: 9999;
+  @media screen and (max-width: 499px) {
+    height: 60px;
+  }
 `
 
 const Kuma = styled.img`
   height: 60px;
+  @media screen and (max-width: 499px) {
+    height: 50px;
+  }
 `
 
 export default Header

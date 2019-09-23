@@ -8,7 +8,7 @@
     'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
     monospace; */
 
-  background: #4b556d;
+  background: #7575ff;
   color: #fff;
   z-index: 2;
   font-size: 14px;
@@ -21,7 +21,7 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: #fff; /* base00 */
+	color: #757575; /* base00 */
 	/* font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; */
 	font-size: 1em;
 	text-align: left;
@@ -63,7 +63,7 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background-color: #353d50; /* base3 */
+	background-color: #f5f5fa; /* base3 */
 }
 
 /* Inline code */
@@ -76,15 +76,15 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: rgba(228, 228, 228, 0.60);
+	color: rgba(115, 115, 115, 0.6);
 }
 
 .token.punctuation {
-	color: rgba(255, 255, 255, 0.8);
+	color: #757575;
 }
 
 .token.operator {
-  color: #fff;
+  color: #757575;
 }
 
 .namespace {
@@ -108,7 +108,7 @@ pre[class*="language-"] {
 .token.builtin,
 .token.url,
 .token.inserted {
-	color: #d4c98f; /* cyan */
+	color: #b9986c; /* cyan */
 }
 
 .token.entity {
@@ -119,7 +119,7 @@ pre[class*="language-"] {
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-	color: #ff6767; /* green */
+	color: #ff6795; /* green */
 }
 
 .token.function,

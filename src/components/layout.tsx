@@ -41,6 +41,9 @@ const Contents = styled.main`
   width: 100%;
   background: ${colors.snow};
   padding: 70px 0 0 0;
+  @media screen and (max-width: 499px) {
+    padding: 60px 0 0 0;
+  }
 `
 
 export default Layout

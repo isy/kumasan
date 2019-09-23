@@ -2184,6 +2184,7 @@ export enum SiteFieldsEnum {
   SiteMetadataTitle = 'siteMetadata___title',
   SiteMetadataDescription = 'siteMetadata___description',
   SiteMetadataAuthor = 'siteMetadata___author',
+  SiteMetadataUrl = 'siteMetadata___url',
   Port = 'port',
   Host = 'host',
   Polyfill = 'polyfill',
@@ -2403,12 +2404,20 @@ export enum SitePageFieldsEnum {
   PluginCreatorResolve = 'pluginCreator___resolve',
   PluginCreatorName = 'pluginCreator___name',
   PluginCreatorVersion = 'pluginCreator___version',
+  PluginCreatorPluginOptionsPlugins = 'pluginCreator___pluginOptions___plugins',
+  PluginCreatorPluginOptionsPluginsResolve = 'pluginCreator___pluginOptions___plugins___resolve',
+  PluginCreatorPluginOptionsPluginsId = 'pluginCreator___pluginOptions___plugins___id',
+  PluginCreatorPluginOptionsPluginsName = 'pluginCreator___pluginOptions___plugins___name',
+  PluginCreatorPluginOptionsPluginsVersion = 'pluginCreator___pluginOptions___plugins___version',
+  PluginCreatorPluginOptionsPluginsPluginFilepath = 'pluginCreator___pluginOptions___plugins___pluginFilepath',
   PluginCreatorPluginOptionsName = 'pluginCreator___pluginOptions___name',
   PluginCreatorPluginOptionsPath = 'pluginCreator___pluginOptions___path',
   PluginCreatorPluginOptionsCommonmark = 'pluginCreator___pluginOptions___commonmark',
   PluginCreatorPluginOptionsFootnotes = 'pluginCreator___pluginOptions___footnotes',
   PluginCreatorPluginOptionsPedantic = 'pluginCreator___pluginOptions___pedantic',
   PluginCreatorPluginOptionsGfm = 'pluginCreator___pluginOptions___gfm',
+  PluginCreatorPluginOptionsClassPrefix = 'pluginCreator___pluginOptions___classPrefix',
+  PluginCreatorPluginOptionsNoInlineHighlight = 'pluginCreator___pluginOptions___noInlineHighlight',
   PluginCreatorPluginOptionsShortName = 'pluginCreator___pluginOptions___short_name',
   PluginCreatorPluginOptionsStartUrl = 'pluginCreator___pluginOptions___start_url',
   PluginCreatorPluginOptionsBackgroundColor = 'pluginCreator___pluginOptions___background_color',
@@ -2605,12 +2614,22 @@ export enum SitePluginFieldsEnum {
   Resolve = 'resolve',
   Name = 'name',
   Version = 'version',
+  PluginOptionsPlugins = 'pluginOptions___plugins',
+  PluginOptionsPluginsResolve = 'pluginOptions___plugins___resolve',
+  PluginOptionsPluginsId = 'pluginOptions___plugins___id',
+  PluginOptionsPluginsName = 'pluginOptions___plugins___name',
+  PluginOptionsPluginsVersion = 'pluginOptions___plugins___version',
+  PluginOptionsPluginsPluginOptionsClassPrefix = 'pluginOptions___plugins___pluginOptions___classPrefix',
+  PluginOptionsPluginsPluginOptionsNoInlineHighlight = 'pluginOptions___plugins___pluginOptions___noInlineHighlight',
+  PluginOptionsPluginsPluginFilepath = 'pluginOptions___plugins___pluginFilepath',
   PluginOptionsName = 'pluginOptions___name',
   PluginOptionsPath = 'pluginOptions___path',
   PluginOptionsCommonmark = 'pluginOptions___commonmark',
   PluginOptionsFootnotes = 'pluginOptions___footnotes',
   PluginOptionsPedantic = 'pluginOptions___pedantic',
   PluginOptionsGfm = 'pluginOptions___gfm',
+  PluginOptionsClassPrefix = 'pluginOptions___classPrefix',
+  PluginOptionsNoInlineHighlight = 'pluginOptions___noInlineHighlight',
   PluginOptionsShortName = 'pluginOptions___short_name',
   PluginOptionsStartUrl = 'pluginOptions___start_url',
   PluginOptionsBackgroundColor = 'pluginOptions___background_color',
@@ -2738,12 +2757,15 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 
 export type SitePluginPluginOptions = {
    __typename?: 'SitePluginPluginOptions',
+  plugins?: Maybe<Array<Maybe<SitePluginPluginOptionsPlugins>>>,
   name?: Maybe<Scalars['String']>,
   path?: Maybe<Scalars['String']>,
   commonmark?: Maybe<Scalars['Boolean']>,
   footnotes?: Maybe<Scalars['Boolean']>,
   pedantic?: Maybe<Scalars['Boolean']>,
   gfm?: Maybe<Scalars['Boolean']>,
+  classPrefix?: Maybe<Scalars['String']>,
+  noInlineHighlight?: Maybe<Scalars['Boolean']>,
   short_name?: Maybe<Scalars['String']>,
   start_url?: Maybe<Scalars['String']>,
   background_color?: Maybe<Scalars['String']>,
@@ -2754,12 +2776,15 @@ export type SitePluginPluginOptions = {
 };
 
 export type SitePluginPluginOptionsFilterInput = {
+  plugins?: Maybe<SitePluginPluginOptionsPluginsFilterListInput>,
   name?: Maybe<StringQueryOperatorInput>,
   path?: Maybe<StringQueryOperatorInput>,
   commonmark?: Maybe<BooleanQueryOperatorInput>,
   footnotes?: Maybe<BooleanQueryOperatorInput>,
   pedantic?: Maybe<BooleanQueryOperatorInput>,
   gfm?: Maybe<BooleanQueryOperatorInput>,
+  classPrefix?: Maybe<StringQueryOperatorInput>,
+  noInlineHighlight?: Maybe<BooleanQueryOperatorInput>,
   short_name?: Maybe<StringQueryOperatorInput>,
   start_url?: Maybe<StringQueryOperatorInput>,
   background_color?: Maybe<StringQueryOperatorInput>,
@@ -2767,6 +2792,40 @@ export type SitePluginPluginOptionsFilterInput = {
   display?: Maybe<StringQueryOperatorInput>,
   icon?: Maybe<StringQueryOperatorInput>,
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
+};
+
+export type SitePluginPluginOptionsPlugins = {
+   __typename?: 'SitePluginPluginOptionsPlugins',
+  resolve?: Maybe<Scalars['String']>,
+  id?: Maybe<Scalars['String']>,
+  name?: Maybe<Scalars['String']>,
+  version?: Maybe<Scalars['String']>,
+  pluginOptions?: Maybe<SitePluginPluginOptionsPluginsPluginOptions>,
+  pluginFilepath?: Maybe<Scalars['String']>,
+};
+
+export type SitePluginPluginOptionsPluginsFilterInput = {
+  resolve?: Maybe<StringQueryOperatorInput>,
+  id?: Maybe<StringQueryOperatorInput>,
+  name?: Maybe<StringQueryOperatorInput>,
+  version?: Maybe<StringQueryOperatorInput>,
+  pluginOptions?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsFilterInput>,
+  pluginFilepath?: Maybe<StringQueryOperatorInput>,
+};
+
+export type SitePluginPluginOptionsPluginsFilterListInput = {
+  elemMatch?: Maybe<SitePluginPluginOptionsPluginsFilterInput>,
+};
+
+export type SitePluginPluginOptionsPluginsPluginOptions = {
+   __typename?: 'SitePluginPluginOptionsPluginsPluginOptions',
+  classPrefix?: Maybe<Scalars['String']>,
+  noInlineHighlight?: Maybe<Scalars['Boolean']>,
+};
+
+export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
+  classPrefix?: Maybe<StringQueryOperatorInput>,
+  noInlineHighlight?: Maybe<BooleanQueryOperatorInput>,
 };
 
 export type SitePluginSortInput = {
@@ -2779,12 +2838,14 @@ export type SiteSiteMetadata = {
   title?: Maybe<Scalars['String']>,
   description?: Maybe<Scalars['String']>,
   author?: Maybe<Scalars['String']>,
+  url?: Maybe<Scalars['String']>,
 };
 
 export type SiteSiteMetadataFilterInput = {
   title?: Maybe<StringQueryOperatorInput>,
   description?: Maybe<StringQueryOperatorInput>,
   author?: Maybe<StringQueryOperatorInput>,
+  url?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SiteSortInput = {
@@ -3001,10 +3062,19 @@ export type PostQueryVariables = {
 
 export type PostQuery = (
   { __typename?: 'Query' }
-  & { markdownRemark: Maybe<(
+  & { site: Maybe<(
+    { __typename?: 'Site' }
+    & { siteMetadata: Maybe<(
+      { __typename?: 'SiteSiteMetadata' }
+      & Pick<SiteSiteMetadata, 'url'>
+    )> }
+  )>, markdownRemark: Maybe<(
     { __typename?: 'MarkdownRemark' }
     & Pick<MarkdownRemark, 'html' | 'excerpt'>
-    & { frontmatter: Maybe<(
+    & { fields: Maybe<(
+      { __typename?: 'MarkdownRemarkFields' }
+      & Pick<MarkdownRemarkFields, 'slug'>
+    )>, frontmatter: Maybe<(
       { __typename?: 'MarkdownRemarkFrontmatter' }
       & Pick<MarkdownRemarkFrontmatter, 'title' | 'category' | 'date'>
       & { thumb: Maybe<(

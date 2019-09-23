@@ -123,11 +123,19 @@ ul {
   @media screen and (max-width: 499px) {
     padding: 3px 0 0 10px;
   }
+
+  p {
+    margin: 0;
+  }
+
   & > li {
     line-height: 1.7;
     position: relative;
     list-style: none;
     padding-left: 15px;
+    ul {
+      padding: 5px 0 0 10px;
+    }
     &:before {
       content: '';
       position: absolute;
@@ -183,6 +191,7 @@ blockquote {
   font-style: italic;
   border-left: 4px solid rgba(173, 189, 218, 0.35);
   padding: 0px 0px 0px 15px;
+  margin: 20px 0 40px 0;
   @media screen and (max-width: 499px) {
     padding: 0px 0px 0px 10px;
     margin: 10px 5px;

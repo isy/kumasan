@@ -3,11 +3,17 @@ import { graphql, Link } from 'gatsby'
 import styled from '@emotion/styled'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock } from '@fortawesome/free-solid-svg-icons'
+
 import '../styles/post.css'
+import  '../styles/syntax.css'
 import colors from '../utils/colors'
 
 import { PostQuery } from '../graphqlTypes'
 
+import FacebookIcon from '../components/icons/facebook'
+import TwiiterIcon from '../components/icons/twitter'
+import HatenaIcon from '../components/icons/hatena'
+import FeedlyIcon from '../components/icons/feedly'
 import SEO from '../components/seo'
 import Layout from '../components/layout'
 
@@ -16,7 +22,6 @@ type Props = {
 }
 
 const PostTemplate: React.FC<Props> = ({ data }) => {
-  console.log(data)
   const { markdownRemark: { html, excerpt, frontmatter } } = data
   const { title, category, date, thumb } = frontmatter
 
@@ -38,10 +43,17 @@ const PostTemplate: React.FC<Props> = ({ data }) => {
             <HeroImg src={thumb.childImageSharp.resize.src} />
           </ArtileCover>
 
-          <ArtileBody>
-            <div dangerouslySetInnerHTML={{ __html: html }} />
-            bodyがはいる
-          </ArtileBody>
+          <Body>
+            <Share>
+              <TwiiterIcon width='24px' />
+              <FacebookIcon width='24px' />
+              <HatenaIcon width='24px' />
+              <FeedlyIcon width='24px' />
+            </Share>
+            <ArtileBody>
+              <div dangerouslySetInnerHTML={{ __html: html }} />
+            </ArtileBody>
+          </Body>
         </Contents>
       </Wrapper>
     </Layout>
@@ -81,7 +93,7 @@ const Wrapper = styled.div`
   width: 100%;
 `
 
-const Contents = styled.main`
+const Contents = styled.div`
   width: 90%;
   margin: 0 auto;
   max-width: 1500px;
@@ -149,6 +161,30 @@ const Title = styled.h1`
     padding: 8px 0 8px 0;
     letter-spacing: 0.12rem;
     line-height: 1.4;
+  }
+`
+
+const Body = styled.div`
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+`
+
+const Share = styled.div`
+  background: ${colors.white};
+  padding: 10px;
+  width: 50px;
+  height: 200px;
+  display: grid;
+  grid-template-rows: 50px 50px 50px 50px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  position: sticky;
+  top: 80px;
+  @media screen and (max-width: 599px) {
+    display: none;
   }
 `
 

@@ -21,33 +21,12 @@ const IndexPage: React.FC<Props> = ({ data }) => (
     <Category />
     <Container>
       <ArticleList>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          // <div key={node.id}>
-          <Artile key={node.id} to={`/${node.fields.slug}`} imgAlt="" imgsrc="" />
-          // <span>
-          //     {node.frontmatter.title}{" "}
-          //       — {node.frontmatter.date}
-          //     </span>
-          //   <p>{node.excerpt}</p>
-          // </div>
-        ))}
+        {data.allMarkdownRemark.edges.map(({ node }) => {
+          const { frontmatter: { title, date, thumb: { childImageSharp: { resize } } } } = node
+          return <Artile key={node.id} title={title} date={date} to={`/${node.fields.slug}`} imgAlt="" imgsrc={resize.src} />
+        })}
       </ArticleList>
-      {/* <Side>
-        <ProfileCard />
-      </Side> */}
     </Container>
-    {/* <Card to="/" imgAlt="" imgsrc="" />
-        <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
-        {data.allMarkdownRemark.edges.map(({ node }: any) => (
-          <div key={node.id}>
-          <span>
-              {node.frontmatter.title}{" "}
-                — {node.frontmatter.date}
-              </span>
-            <p>{node.excerpt}</p>
-          </div>
-        ))}
-    <Link to="/page-2/">Go to page 2</Link> */}
   </Layout>
 )
 
@@ -64,6 +43,14 @@ export const query = graphql`
           frontmatter {
             title
             category
+            thumb {
+              childImageSharp {
+                resize(width: 200) {
+                  src
+                  width
+                }
+              }
+            }
             date(formatString: "YYYY.MM.DD")
           }
           excerpt

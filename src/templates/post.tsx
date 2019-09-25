@@ -128,6 +128,7 @@ const Wrapper = styled.div`
 const Contents = styled.div`
   width: 90%;
   margin: 0 auto;
+  padding: 0 0 20px 0;
   max-width: 1500px;
   @media screen and (max-width: 1099px) {
     width: 100%;
@@ -221,8 +222,27 @@ const Share = styled.div`
 `
 
 const ShareItem = styled.a`
-  &:hover{
-    opacity: 0.8;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  z-index: auto;
+  &:before {
+    z-index: -1;
+    transition: 0.2s ease;
+    content: "";
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    border-radius: 10px;
+  }
+  &:hover:before {
+    top: 0rem;
+    right: 0rem;
+    bottom: 0rem;
+    left: 0rem;
+    background: #f0f4f6;
   }
 `
 

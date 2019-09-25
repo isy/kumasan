@@ -6,22 +6,24 @@ import { faClock } from '@fortawesome/free-solid-svg-icons'
 
 type Props = {
   to: string
+  title: string
+  date: string
   imgsrc: string
   imgAlt: string
   className?: string
 }
 
-const Card: React.FC<Props> = ({ to, imgsrc, imgAlt, className }) => (
+const Card: React.FC<Props> = ({ to, title, date, imgsrc, imgAlt, className }) => (
   <Link to={to} className={className}>
     <Wrapper>
       <Hero>
         <HeroImg src={imgsrc} alt={imgAlt} />
       </Hero>
       <Meta>
-        <Title>テスト</Title>
+        <Title>{title}</Title>
         <DateTime>
           <FontAwesomeIcon icon={faClock} />
-          <Time>2019-09</Time>
+          <Time>{date}</Time>
         </DateTime>
       </Meta>
     </Wrapper>

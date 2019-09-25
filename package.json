@@ -20,6 +20,7 @@
     "gatsby-plugin-postcss": "^2.1.7",
     "gatsby-plugin-react-helmet": "^3.1.7",
     "gatsby-plugin-sharp": "^2.2.22",
+    "gatsby-plugin-twitter": "^2.1.7",
     "gatsby-plugin-typescript": "^2.1.7",
     "gatsby-remark-code-titles": "^1.1.0",
     "gatsby-remark-prismjs": "^3.3.14",

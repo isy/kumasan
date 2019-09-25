@@ -9,21 +9,18 @@ const Category: React.FC = () => (
   <CategoryList>
     <Innter>
       <Item to="/" activeStyle={Active}>
-        ALL
+        All
       </Item>
-      <Item to="/">DEV</Item>
-      <Item to="/">SELF</Item>
-      <Item to="/">OTHER</Item>
+      <Item to="/">Dev</Item>
+      <Item to="/">Self</Item>
+      <Item to="/">Other</Item>
     </Innter>
   </CategoryList>
 )
 
 const CategoryList = styled.section`
   width: 100%;
-  // display: flex;
-  // justify-content: center;
   background: ${colors.white};
-  padding: 0 0 10px 0;
 `
 
 const Innter = styled.div`
@@ -36,12 +33,15 @@ const Innter = styled.div`
 
 const Item = styled(Link)`
   display: inline-block;
-  margin: 0 15px 0 0;
+  margin: 0 40px 0 0;
+  padding: 0 5px 10px;
   color: ${colors.gray};
 `
 
 const Active = {
   color: colors.standard,
+  fontWeight: 600,
+  borderBottom: '2px solid #000'
 }
 
 export default Category

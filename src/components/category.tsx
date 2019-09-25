@@ -41,7 +41,7 @@ const Item = styled(Link)`
 const Active = {
   color: colors.standard,
   fontWeight: 600,
-  borderBottom: '2px solid #000'
+  borderBottom: '2px solid #000',
 }
 
 export default Category

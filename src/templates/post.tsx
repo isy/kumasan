@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock } from '@fortawesome/free-solid-svg-icons'
 
 import '../styles/post.css'
-import  '../styles/syntax.css'
+import '../styles/syntax.css'
 import colors from '../utils/colors'
 
 import { PostQuery } from '../graphqlTypes'
@@ -21,7 +21,7 @@ type Props = {
   data: PostQuery
 }
 
-type Share =  {
+type Share = {
   twitter: string
   facebook: string
   hatena: string
@@ -29,16 +29,17 @@ type Share =  {
 }
 
 const PostTemplate: React.FC<Props> = ({ data }) => {
-  const { site: { siteMetadata }, markdownRemark: { html, excerpt, fields, frontmatter } } = data
+  const {
+    site: { siteMetadata },
+    markdownRemark: { html, excerpt, fields, frontmatter },
+  } = data
   const { title, category, date, thumb } = frontmatter
 
   const share: Share = {
-    twitter: `https://twitter.com/intent/tweet?url=${siteMetadata.url}${fields.slug}&text=${
-      title
-    }｜@isytter`,
+    twitter: `https://twitter.com/intent/tweet?url=${siteMetadata.url}${fields.slug}&text=${title}｜@isytter`,
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${siteMetadata.url}${fields.slug}`,
     hatena: `http://b.hatena.ne.jp/add?url=${siteMetadata.url}${fields.slug}`,
-    feedly: `https://feedly.com/i/subscription/feed/${siteMetadata.url}/feed.xml`
+    feedly: `https://feedly.com/i/subscription/feed/${siteMetadata.url}/feed.xml`,
   }
 
   return (
@@ -50,11 +51,11 @@ const PostTemplate: React.FC<Props> = ({ data }) => {
             <Heading>
               <Time>
                 <FontAwesomeIcon icon={faClock} />
-                <span>{ date }</span>
+                <span>{date}</span>
               </Time>
 
-              <Title>{ title }</Title>
-              <Link to='/' >{ category }</Link>
+              <Title>{title}</Title>
+              <Link to="/">{category}</Link>
             </Heading>
             <HeroImg src={thumb.childImageSharp.resize.src} />
           </ArtileCover>
@@ -62,16 +63,16 @@ const PostTemplate: React.FC<Props> = ({ data }) => {
           <Body>
             <Share>
               <ShareItem href={share.twitter} target="_blank" rel="noopener">
-                <TwiiterIcon width='24px' />
+                <TwiiterIcon width="24px" />
               </ShareItem>
               <ShareItem href={share.facebook} target="_blank" rel="noopener">
-                <FacebookIcon width='24px' />
+                <FacebookIcon width="24px" />
               </ShareItem>
               <ShareItem href={share.hatena} target="_blank" rel="noopener">
-                <HatenaIcon width='24px' />
+                <HatenaIcon width="24px" />
               </ShareItem>
               <ShareItem href={share.feedly} target="_blank" rel="noopener">
-                <FeedlyIcon width='24px' />
+                <FeedlyIcon width="24px" />
               </ShareItem>
             </Share>
             <ArtileBody className="md">
@@ -229,7 +230,7 @@ const ShareItem = styled.a`
   &:before {
     z-index: -1;
     transition: 0.2s ease;
-    content: "";
+    content: '';
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;

@@ -22,8 +22,25 @@ const IndexPage: React.FC<Props> = ({ data }) => (
     <Container>
       <ArticleList>
         {data.allMarkdownRemark.edges.map(({ node }) => {
-          const { frontmatter: { title, date, thumb: { childImageSharp: { resize } } } } = node
-          return <Artile key={node.id} title={title} date={date} to={`/${node.fields.slug}`} imgAlt="" imgsrc={resize.src} />
+          const {
+            frontmatter: {
+              title,
+              date,
+              thumb: {
+                childImageSharp: { resize },
+              },
+            },
+          } = node
+          return (
+            <Artile
+              key={node.id}
+              title={title}
+              date={date}
+              to={`/${node.fields.slug}`}
+              imgAlt=""
+              imgsrc={resize.src}
+            />
+          )
         })}
       </ArticleList>
     </Container>

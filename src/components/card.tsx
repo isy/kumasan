@@ -13,7 +13,14 @@ type Props = {
   className?: string
 }
 
-const Card: React.FC<Props> = ({ to, title, date, imgsrc, imgAlt, className }) => (
+const Card: React.FC<Props> = ({
+  to,
+  title,
+  date,
+  imgsrc,
+  imgAlt,
+  className,
+}) => (
   <Link to={to} className={className}>
     <Wrapper>
       <Hero>

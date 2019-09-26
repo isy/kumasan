@@ -10,12 +10,12 @@ import colors from '../utils/colors'
 
 import { PostQuery } from '../graphqlTypes'
 
-import FacebookIcon from '../components/icons/facebook'
-import TwiiterIcon from '../components/icons/twitter'
-import HatenaIcon from '../components/icons/hatena'
-import FeedlyIcon from '../components/icons/feedly'
-import SEO from '../components/seo'
-import Layout from '../components/layout'
+import FacebookIcon from '../components/icons/Facebook'
+import TwiiterIcon from '../components/icons/Twitter'
+import HatenaIcon from '../components/icons/Hatena'
+import FeedlyIcon from '../components/icons/Feedly'
+import SEO from '../components/Seo'
+import Layout from '../components/Layout'
 
 type Props = {
   data: PostQuery

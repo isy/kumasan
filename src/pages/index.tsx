@@ -4,12 +4,12 @@ import styled from '@emotion/styled'
 
 import { PageQuery } from '../graphqlTypes'
 
-import Layout from '../components/layout'
-import Image from '../components/image'
-import SEO from '../components/seo'
-import Card from '../components/card'
-import Profile from '../components/profile'
-import Category from '../components/category'
+import Layout from '../components/Layout'
+import Image from '../components/Image'
+import SEO from '../components/Seo'
+import Card from '../components/Card'
+import Profile from '../components/Profile'
+import Category from '../components/Category'
 
 type Props = {
   data: PageQuery

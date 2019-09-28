@@ -1,6 +1,8 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import styled from '@emotion/styled'
+import { JsonLd } from 'react-schemaorg'
+import { BreadcrumbList, Blog, Thing, Article } from 'schema-dts'
 
 import '../styles/post.css'
 import '../styles/syntax.css'
@@ -33,8 +35,41 @@ const PostTemplate: React.FC<Props> = ({ data }) => {
 
   return (
     <Layout>
+      <SEO title={title} description={excerpt} image={thumb.childImageSharp.resize.src} />
+      <JsonLd<BreadcrumbList> item={{
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          {
+            '@type': 'ListItem',
+            'position': 1,
+            'item': {
+              '@type': 'Blog',
+              'id': siteMetadata.url,
+              'name': siteMetadata.title
+            } as Blog
+          },
+          {
+            '@type': 'ListItem',
+            'position': 2,
+            'item': {
+              '@type': 'Thing',
+              'id': `${siteMetadata.url}/categories/${category}`,
+              'name': category
+            } as Thing
+          },
+          {
+            '@type': 'ListItem',
+            'position': 3,
+            'item': {
+              '@type': 'Article',
+              'id': `${siteMetadata.url}/${title}`,
+              'name': title
+            } as Article
+          }
+        ]
+      }} />
       <Wrapper>
-        <SEO title="" />
         <Contents>
           <ArtileCover>
             <Heading>
@@ -70,6 +105,7 @@ export const query = graphql`
     site {
       siteMetadata {
         url
+        title
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

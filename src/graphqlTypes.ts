@@ -3010,20 +3010,6 @@ export type Unnamed_1_Query = (
   )> }
 );
 
-export type SiteTitleQueryQueryVariables = {};
-
-
-export type SiteTitleQueryQuery = (
-  { __typename?: 'Query' }
-  & { site: Maybe<(
-    { __typename?: 'Site' }
-    & { siteMetadata: Maybe<(
-      { __typename?: 'SiteSiteMetadata' }
-      & Pick<SiteSiteMetadata, 'title'>
-    )> }
-  )> }
-);
-
 export type Unnamed_2_QueryVariables = {};
 
 
@@ -3033,7 +3019,7 @@ export type Unnamed_2_Query = (
     { __typename?: 'Site' }
     & { siteMetadata: Maybe<(
       { __typename?: 'SiteSiteMetadata' }
-      & Pick<SiteSiteMetadata, 'title' | 'description' | 'author'>
+      & Pick<SiteSiteMetadata, 'title' | 'description' | 'url'>
     )> }
   )> }
 );
@@ -3121,7 +3107,7 @@ export type PostQuery = (
     { __typename?: 'Site' }
     & { siteMetadata: Maybe<(
       { __typename?: 'SiteSiteMetadata' }
-      & Pick<SiteSiteMetadata, 'url'>
+      & Pick<SiteSiteMetadata, 'url' | 'title'>
     )> }
   )>, markdownRemark: Maybe<(
     { __typename?: 'MarkdownRemark' }

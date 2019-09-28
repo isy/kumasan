@@ -14,9 +14,10 @@ type Props = {
   lang?: string
   meta?: HTMLMetaElement[]
   title: string
+  image?: string
 }
 
-const SEO: React.FC<Props> = ({ description, lang, title, meta = [] }) => {
+const SEO: React.FC<Props> = ({ description, title, image, lang = 'ja', meta = [] }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -24,7 +25,7 @@ const SEO: React.FC<Props> = ({ description, lang, title, meta = [] }) => {
           siteMetadata {
             title
             description
-            author
+            url
           }
         }
       }
@@ -32,6 +33,7 @@ const SEO: React.FC<Props> = ({ description, lang, title, meta = [] }) => {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const ogImage = `${site.siteMetadata.url}` + (image || `/images/ogp.jpg`)
 
   return (
     <Helmet
@@ -54,16 +56,20 @@ const SEO: React.FC<Props> = ({ description, lang, title, meta = [] }) => {
           content: metaDescription,
         },
         {
+          property: 'og:url',
+          content: site.siteMetadata.url
+        },
+        {
           property: 'og:type',
-          content: 'website',
+          content: 'blog',
+        },
+        {
+          property: 'og:image',
+          content: ogImage
         },
         {
           name: 'twitter:card',
           content: 'summary',
-        },
-        {
-          name: 'twitter:creator',
-          content: site.siteMetadata.author,
         },
         {
           name: 'twitter:title',
@@ -73,6 +79,10 @@ const SEO: React.FC<Props> = ({ description, lang, title, meta = [] }) => {
           name: 'twitter:description',
           content: metaDescription,
         },
+        {
+          name: 'twitter:image',
+          content: ogImage,
+        }
       ].concat(meta)}
     />
   )

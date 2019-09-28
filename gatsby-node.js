@@ -23,6 +23,12 @@ exports.createPages = async ({ graphql, actions }) => {
             fields {
               slug
             }
+          }
+        }
+      }
+      categories: allMarkdownRemark {
+        group(field: frontmatter___category, limit: 1) {
+          nodes {
             frontmatter {
               category
             }
@@ -37,6 +43,18 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve('./src/templates/post.tsx'),
       context: {
         slug: node.fields.slug,
+      },
+    })
+  })
+
+  result.data.categories.group.forEach(({ nodes }) => {
+    const [node] = nodes
+    const { frontmatter: { category } } = node
+    createPage({
+      path: `/categories/${category}`,
+      component: path.resolve('./src/templates/category.tsx'),
+      context: {
+        category,
       },
     })
   })

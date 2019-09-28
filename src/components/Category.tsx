@@ -11,9 +11,9 @@ const Category: React.FC = () => (
       <Item to="/" activeStyle={Active}>
         All
       </Item>
-      <Item to="/">Dev</Item>
-      <Item to="/">Self</Item>
-      <Item to="/">Other</Item>
+      <Item to="/categories/dev" activeStyle={Active}>Dev</Item>
+      <Item to="/categories/self" activeStyle={Active}>Self</Item>
+      <Item to="/categories/other" activeStyle={Active}>Other</Item>
     </Innter>
   </CategoryList>
 )

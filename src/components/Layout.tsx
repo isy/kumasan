@@ -6,7 +6,6 @@
  */
 
 import React, { PropsWithChildren } from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
 
 import colors from '../utils/colors'
@@ -18,16 +17,6 @@ import './layout.css'
 type Props = {}
 
 const Layout: React.FC<PropsWithChildren<Props>> = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <>
       <Header />
@@ -39,10 +28,12 @@ const Layout: React.FC<PropsWithChildren<Props>> = ({ children }) => {
 
 const Contents = styled.main`
   width: 100%;
+  min-height: calc(100vh - 70px);
   background: ${colors.snow};
   padding: 70px 0 0 0;
   @media screen and (max-width: 499px) {
     padding: 60px 0 0 0;
+    min-height: calc(100vh - 60px);
   }
 `
 

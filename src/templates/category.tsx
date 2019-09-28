@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import styled from '@emotion/styled'
 
-import { PageQuery } from '../graphqlTypes'
+import { CategoryQuery } from '../graphqlTypes'
 
 import Layout from '../components/Layout'
 import SEO from '../components/Seo'
@@ -11,10 +11,10 @@ import Profile from '../components/Profile'
 import Category from '../components/Category'
 
 type Props = {
-  data: PageQuery
+  data: CategoryQuery
 }
 
-const IndexPage: React.FC<Props> = ({ data }) => (
+const CategoryTemplate: React.FC<Props> = ({ data }) => (
   <Layout>
     <SEO title="Home" lang="ja" description="" meta={[]} />
     <Category />
@@ -47,9 +47,10 @@ const IndexPage: React.FC<Props> = ({ data }) => (
 )
 
 export const query = graphql`
-  query Page {
+  query Category($category: String) {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { category: { eq: $category } } }
     ) {
       totalCount
       edges {
@@ -112,23 +113,4 @@ const ArticleList = styled.section`
   }
 `
 
-const Side = styled.aside`
-  width: 30%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
-  @media screen and (max-width: 480px) {
-    width: 100%;
-  }
-`
-
-const ProfileCard = styled(Profile)`
-  width: 90%;
-  max-width: 250px;
-  height: 300px;
-  position: sticky;
-  top: 110px;
-`
-
-export default IndexPage
+export default CategoryTemplate

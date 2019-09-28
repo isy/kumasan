@@ -44,7 +44,7 @@ const PostTemplate: React.FC<Props> = ({ data }) => {
               </Time>
 
               <Title>{title}</Title>
-              <CategoryLink to="/" type={category as CategoryType}>{category.toUpperCase()}</CategoryLink>
+              <CategoryLink to={`/categories/${category}`} type={category as CategoryType}>{category.toUpperCase()}</CategoryLink>
             </Heading>
             <HeroImg src={thumb.childImageSharp.resize.src} />
           </ArtileCover>

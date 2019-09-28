@@ -7,16 +7,16 @@ import { CategoryQuery } from '../graphqlTypes'
 import Layout from '../components/Layout'
 import SEO from '../components/Seo'
 import Card from '../components/Card'
-import Profile from '../components/Profile'
 import Category from '../components/Category'
 
 type Props = {
   data: CategoryQuery
+  pageContext: { category: string }
 }
 
-const CategoryTemplate: React.FC<Props> = ({ data }) => (
+const CategoryTemplate: React.FC<Props> = ({ data, pageContext: { category } }) => (
   <Layout>
-    <SEO title="Home" lang="ja" description="" meta={[]} />
+    <SEO title={category.toUpperCase()} lang="ja" description="" meta={[]} />
     <Category />
     <Container>
       <ArticleList>

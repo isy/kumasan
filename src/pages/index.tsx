@@ -7,7 +7,6 @@ import { PageQuery } from '../graphqlTypes'
 import Layout from '../components/Layout'
 import SEO from '../components/Seo'
 import Card from '../components/Card'
-import Profile from '../components/Profile'
 import Category from '../components/Category'
 
 type Props = {
@@ -16,7 +15,7 @@ type Props = {
 
 const IndexPage: React.FC<Props> = ({ data }) => (
   <Layout>
-    <SEO title="Home" lang="ja" description="" meta={[]} />
+    <SEO isRoot={true} lang="ja" description="" meta={[]} />
     <Category />
     <Container>
       <ArticleList>
@@ -110,25 +109,6 @@ const ArticleList = styled.section`
   @media screen and (max-width: 480px) {
     width: 100%;
   }
-`
-
-const Side = styled.aside`
-  width: 30%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
-  @media screen and (max-width: 480px) {
-    width: 100%;
-  }
-`
-
-const ProfileCard = styled(Profile)`
-  width: 90%;
-  max-width: 250px;
-  height: 300px;
-  position: sticky;
-  top: 110px;
 `
 
 export default IndexPage

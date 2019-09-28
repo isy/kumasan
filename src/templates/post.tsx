@@ -16,6 +16,7 @@ import HatenaIcon from '../components/icons/Hatena'
 import FeedlyIcon from '../components/icons/Feedly'
 import SEO from '../components/Seo'
 import Layout from '../components/Layout'
+import Profile from '../components/profile'
 
 type Props = {
   data: PostQuery
@@ -75,10 +76,12 @@ const PostTemplate: React.FC<Props> = ({ data }) => {
                 <FeedlyIcon width="24px" />
               </ShareItem>
             </Share>
-            <ArtileBody className="md">
-              <div dangerouslySetInnerHTML={{ __html: html }} />
+            <ArtileBody>
+              <div className="md" dangerouslySetInnerHTML={{ __html: html }} />
+              <Profile />
             </ArtileBody>
           </Body>
+
         </Contents>
       </Wrapper>
     </Layout>

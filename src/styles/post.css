@@ -119,6 +119,11 @@ h1 {
   strong {
     font-weight: bolder;
     color: #151515;
+    background: linear-gradient(transparent 70%,#fdec4f 0);
+  }
+
+  em {
+    font-style: italic;
   }
 
   ul {

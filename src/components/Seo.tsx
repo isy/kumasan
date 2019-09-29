@@ -2,6 +2,8 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
+import OGPImage from '../images/ogp.jpg'
+
 type Props = {
   isRoot?: boolean
   description?: string
@@ -27,7 +29,7 @@ const SEO: React.FC<Props> = ({ isRoot = false, description, title, image, lang 
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const ogImage = `${site.siteMetadata.url}` + (image || `/images/ogp.jpg`)
+  const ogImage = `${site.siteMetadata.url}` + (image || OGPImage)
 
   return (
     <Helmet

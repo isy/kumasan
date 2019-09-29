@@ -33,9 +33,11 @@ const PostTemplate: React.FC<Props> = ({ data }) => {
   } = data
   const { title, category, date, thumb } = frontmatter
 
+  const { resizeS, resizeM, resizeL } = thumb.childImageSharp
+
   return (
     <Layout>
-      <SEO title={title} description={excerpt} image={thumb.childImageSharp.resize.src} />
+      <SEO title={title} description={excerpt} image={resizeS.src} />
       <JsonLd<BreadcrumbList> item={{
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
@@ -81,7 +83,7 @@ const PostTemplate: React.FC<Props> = ({ data }) => {
               <Title>{title}</Title>
               <CategoryLink to={`/categories/${category}`} type={category as CategoryType}>{category.toUpperCase()}</CategoryLink>
             </Heading>
-            <HeroImg src={thumb.childImageSharp.resize.src} />
+            <HeroImg src={resizeS.src} srcM={resizeM.src} srcL={resizeL.src} />
           </ArtileCover>
 
           <Body>
@@ -120,7 +122,17 @@ export const query = graphql`
         date(formatString: "YYYY.MM.DD")
         thumb {
           childImageSharp {
-            resize(width: 400) {
+            resizeS: resize(width: 400) {
+              src
+              height
+              width
+            }
+            resizeM: resize(width: 700) {
+              src
+              height
+              width
+            }
+            resizeL: resize(width: 1000) {
               src
               height
               width
@@ -180,19 +192,30 @@ const Heading = styled.div`
   }
 `
 
+type Src = {
+  src?: string
+  srcM?: string
+  srcL?: string
+}
+
 const HeroImg = styled.div`
   width: 50%;
-  background-image: url(${({ src }: { src: string }) => src});
+  background-image: url(${({ src }: Src) => src});
   background-size: cover;
   background-position: 50%;
   @media screen and (max-width: 1099px) {
     width: 100%;
     min-height: 380px;
     max-height: 500px;
+    background-image: url(${({ srcL }: Src) => srcL});
+  }
+  @media screen and (max-width: 699px) {
+    background-image: url(${({ srcM }: Src) => srcM});
   }
   @media screen and (max-width: 499px) {
     min-height: 300px;
     max-height: 450px;
+    background-image: url(${({ src }: Src) => src});
   }
 `
 

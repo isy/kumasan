@@ -62,7 +62,7 @@ export const query = graphql`
             category
             thumb {
               childImageSharp {
-                resize(width: 200) {
+                resize(width: 500) {
                   src
                   width
                 }

@@ -2184,8 +2184,8 @@ export enum SiteFieldsEnum {
   InternalType = 'internal___type',
   SiteMetadataTitle = 'siteMetadata___title',
   SiteMetadataDescription = 'siteMetadata___description',
-  SiteMetadataAuthor = 'siteMetadata___author',
   SiteMetadataUrl = 'siteMetadata___url',
+  SiteMetadataSiteUrl = 'siteMetadata___siteUrl',
   Port = 'port',
   Host = 'host',
   Polyfill = 'polyfill',
@@ -2428,6 +2428,8 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsThemeColor = 'pluginCreator___pluginOptions___theme_color',
   PluginCreatorPluginOptionsDisplay = 'pluginCreator___pluginOptions___display',
   PluginCreatorPluginOptionsIcon = 'pluginCreator___pluginOptions___icon',
+  PluginCreatorPluginOptionsOutput = 'pluginCreator___pluginOptions___output',
+  PluginCreatorPluginOptionsTrackingId = 'pluginCreator___pluginOptions___trackingId',
   PluginCreatorPluginOptionsPathCheck = 'pluginCreator___pluginOptions___pathCheck',
   PluginCreatorNodeApIs = 'pluginCreator___nodeAPIs',
   PluginCreatorBrowserApIs = 'pluginCreator___browserAPIs',
@@ -2642,6 +2644,8 @@ export enum SitePluginFieldsEnum {
   PluginOptionsThemeColor = 'pluginOptions___theme_color',
   PluginOptionsDisplay = 'pluginOptions___display',
   PluginOptionsIcon = 'pluginOptions___icon',
+  PluginOptionsOutput = 'pluginOptions___output',
+  PluginOptionsTrackingId = 'pluginOptions___trackingId',
   PluginOptionsPathCheck = 'pluginOptions___pathCheck',
   NodeApIs = 'nodeAPIs',
   BrowserApIs = 'browserAPIs',
@@ -2780,6 +2784,8 @@ export type SitePluginPluginOptions = {
   theme_color?: Maybe<Scalars['String']>,
   display?: Maybe<Scalars['String']>,
   icon?: Maybe<Scalars['String']>,
+  output?: Maybe<Scalars['String']>,
+  trackingId?: Maybe<Scalars['String']>,
   pathCheck?: Maybe<Scalars['Boolean']>,
 };
 
@@ -2799,6 +2805,8 @@ export type SitePluginPluginOptionsFilterInput = {
   theme_color?: Maybe<StringQueryOperatorInput>,
   display?: Maybe<StringQueryOperatorInput>,
   icon?: Maybe<StringQueryOperatorInput>,
+  output?: Maybe<StringQueryOperatorInput>,
+  trackingId?: Maybe<StringQueryOperatorInput>,
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
 };
 
@@ -2845,15 +2853,15 @@ export type SiteSiteMetadata = {
    __typename?: 'SiteSiteMetadata',
   title?: Maybe<Scalars['String']>,
   description?: Maybe<Scalars['String']>,
-  author?: Maybe<Scalars['String']>,
   url?: Maybe<Scalars['String']>,
+  siteUrl?: Maybe<Scalars['String']>,
 };
 
 export type SiteSiteMetadataFilterInput = {
   title?: Maybe<StringQueryOperatorInput>,
   description?: Maybe<StringQueryOperatorInput>,
-  author?: Maybe<StringQueryOperatorInput>,
   url?: Maybe<StringQueryOperatorInput>,
+  siteUrl?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SiteSortInput = {
@@ -3122,7 +3130,13 @@ export type PostQuery = (
         { __typename?: 'File' }
         & { childImageSharp: Maybe<(
           { __typename?: 'ImageSharp' }
-          & { resize: Maybe<(
+          & { resizeS: Maybe<(
+            { __typename?: 'ImageSharpResize' }
+            & Pick<ImageSharpResize, 'src' | 'height' | 'width'>
+          )>, resizeM: Maybe<(
+            { __typename?: 'ImageSharpResize' }
+            & Pick<ImageSharpResize, 'src' | 'height' | 'width'>
+          )>, resizeL: Maybe<(
             { __typename?: 'ImageSharpResize' }
             & Pick<ImageSharpResize, 'src' | 'height' | 'width'>
           )>, original: Maybe<(

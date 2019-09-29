@@ -3,8 +3,8 @@ import styled from '@emotion/styled'
 
 import colors from '../utils/colors'
 
-import Header from './header'
-import Footer from './footer'
+import Header from './Header'
+import Footer from './Footer'
 import './layout.css'
 
 type Props = {}

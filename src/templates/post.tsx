@@ -13,7 +13,7 @@ import { PostQuery } from '../graphqlTypes'
 
 import SEO from '../components/Seo'
 import Layout from '../components/Layout'
-import Profile from '../components/profile'
+import Profile from '../components/Profile'
 import PostShare from '../components/PostShare'
 
 type Props = {

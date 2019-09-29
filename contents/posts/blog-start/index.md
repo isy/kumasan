@@ -2,7 +2,7 @@
 title: 'ブログはじめたよ'
 date: '2019-09-29'
 category: 'self'
-thumb: 'thumb.png'
+thumb: 'blog-start-thumb.png'
 ---
 
 

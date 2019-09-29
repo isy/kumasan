@@ -5,7 +5,7 @@ import colors from '../utils/colors'
 import Kuma from '../images/isy.svg'
 import GitHub from '../images/github.svg'
 
-import Twiiter from './icons/twitter'
+import Twiiter from './icons/Twitter'
 
 
 type Props = {

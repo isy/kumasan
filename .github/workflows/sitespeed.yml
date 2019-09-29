@@ -17,4 +17,4 @@ jobs:
       - name: sitespeed check
         run: |
           npm install -g sitespeed.io
-          sitespeed.io -u https://kumaaaaa.com/ -d 2 -n 1 --budget.configPath .github/budget.json
+          sitespeed.io -u https://kumaaaaa.com/ -d 2 -n 1 --budget.configPath ./.github/budget.json

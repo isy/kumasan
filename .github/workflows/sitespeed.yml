@@ -2,7 +2,7 @@ name: sitespeed
 
 on:
   push:
-    branchs:
+    branches:
       - master
 
 jobs:
@@ -16,6 +16,5 @@ jobs:
 
       - name: sitespeed check
         run: |
-          cp .target_url /github/workspace/url
           npm install -g sitespeed.io
           sitespeed.io.cmd -u https://kumaaaaa.com/ -d 2 -n 1 --budget /github/workspace/.github/budget.json

@@ -1,7 +1,7 @@
 name: sitespeed
 
 on:
-  push:
+  deployment_status:
     branchs:
       - "!master"
 

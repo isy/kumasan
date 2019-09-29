@@ -1,12 +1,12 @@
 name: sitespeed
 
 on:
-  deployment:
+  push:
     branchs:
-      - "!master"
+      - master
 
 jobs:
-  test:
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -14,8 +14,8 @@ jobs:
         with:
           node_version: 10
 
-      - name: sitespeed install
+      - name: sitespeed check
         run: |
           cp .target_url /github/workspace/url
           npm install -g sitespeed.io
-          sitespeed.io.cmd -u /github/workspace/url -n 1 --budget /github/workspace/.github/budget.json
+          sitespeed.io.cmd -u https://kumaaaaa.com/ -d 2 -n 1 --budget /github/workspace/.github/budget.json

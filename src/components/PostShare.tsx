@@ -27,7 +27,7 @@ const PostShare: React.FC<Props> = ({ className, siteUrl, slug, title }) => {
     twitter: `https://twitter.com/intent/tweet?url=${siteUrl}${slug}&text=${title}｜@isytter`,
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${siteUrl}${slug}`,
     hatena: `http://b.hatena.ne.jp/add?url=${siteUrl}${slug}`,
-    feedly: `https://feedly.com/i/subscription/feed/${siteUrl}/feed.xml`,
+    feedly: `https://feedly.com/i/subscription/feed/${siteUrl}/rss.xml`,
   }
   return (
     <Share className={className}>

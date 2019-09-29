@@ -3,6 +3,7 @@ module.exports = {
     title: 'くまの部屋',
     description: 'くまの個人ブログ。エンジニアリングからビジネス・デザインなことまで様々',
     url: `https://kumaaaaa.com`,
+    siteUrl: `https://kumaaaaa.com`,
   },
   plugins: [
     `gatsby-plugin-typescript`,
@@ -78,5 +79,6 @@ module.exports = {
     `gatsby-plugin-twitter`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-netlify`,
+    `gatsby-plugin-feed`,
   ],
 }

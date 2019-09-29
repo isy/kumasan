@@ -63,6 +63,18 @@ module.exports = {
         icon: `src/images/icon-192x192.png`,
       },
     },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/sitemap.xml`
+      }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-114504071-5"
+      }
+    },
     `gatsby-plugin-twitter`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-netlify`,

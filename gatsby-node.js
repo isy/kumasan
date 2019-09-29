@@ -14,7 +14,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 }
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
   const result = await graphql(`
     query {
       allMarkdownRemark {
@@ -57,6 +57,13 @@ exports.createPages = async ({ graphql, actions }) => {
         category,
       },
     })
+  })
+
+  createRedirect({
+    fromPath: 'https://xenodochial-kepler-3b3598.netlify.com/*',
+    toPath: 'https://kumaaaaa.com/:splat',
+    isPermanent: true,
+    force: true,
   })
 }
 

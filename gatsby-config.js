@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'くまの部屋',
     description: 'くまの個人ブログ。エンジニアリングからビジネス・デザインなことまで様々',
-    url: `https://kumasan.xyz`,
+    url: `https://kumaaaaa.com`,
   },
   plugins: [
     `gatsby-plugin-typescript`,

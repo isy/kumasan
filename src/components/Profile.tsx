@@ -30,7 +30,7 @@ const Profile: React.FC<Props> = ({ className }) => (
             <SocialIcon src={GitHub} alt="github" />
           </a>
           <a href="https://twitter.com/isytter" target="_blank" rel="noopener noreferrer">
-            <Twiiter width="16px" />
+            <Twiiter width="20px" />
           </a>
         </SocialList>
       </Desc>
@@ -95,13 +95,18 @@ const Bio = styled.div`
 
 const SocialList = styled.div`
   display: grid;
-  grid-template-columns: 30px 30px;
+  grid-template-columns: 35px 35px;
   margin: 10px 0;
   padding: 5px 0;
+  & > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `
 
 const SocialIcon = styled.img`
-  width: 16px;
+  width: 20px;
 `
 
 export default Profile

@@ -283,7 +283,7 @@ const ShareText = styled.p`
   display: none;
   font-weight: bold;
   font-size: 18px;
-  margin: 20px 0 0 0;
+  margin: 40px 0 0 0;
   @media screen and (max-width: 599px) {
     display: block;
   }
@@ -292,9 +292,15 @@ const ShareText = styled.p`
 const MobileShare = styled(PostShare)`
 display: none;
 position: unset;
+margin: 10px 0 0 0;
+& > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 @media screen and (max-width: 599px) {
   display: grid;
-  grid-template-columns: 60px 60px 60px 60px;
+  grid-template-columns: 70px 70px 70px 70px;
   grid-template-rows: unset;
   width: auto;
   height: auto;

@@ -18,7 +18,7 @@ thumb: 'blog-start-thumb.png'
 ## ブログの技術的なお話
 ここからは技術のお話。
 
-このブログは[Gatsby](https://www.gatsbyjs.org/)で作った。GatsbyはReact製の静的サイトジェネレータで、Markdownでらくーに記事を書くこともできるし、HeadlessCMSを使ってJAMSstackな構成でイマドキのイケイケブログみたいなこともできる。 そうやって作った記事をGraphQLクエリを通じて組み込める。プラグインも豊富でカスタマイズもしやすいのでサイコーって感じ。
+このブログは[Gatsby](https://www.gatsbyjs.org/)で作った。GatsbyはReact製の静的サイトジェネレータで、Markdownでらくーに記事を書くこともできるし、HeadlessCMSを使ってJAMStackな構成でイマドキのイケイケブログみたいなこともできる。 そうやって作った記事をGraphQLクエリを通じて組み込める。プラグインも豊富でカスタマイズもしやすいのでサイコーって感じ。
 
 ### Gatsby × TypeScript
 やっぱり静的型付けはDX最高なのでTypeScriptにした。

@@ -25,7 +25,7 @@ thumb: 'blog-start-thumb.png'
 
 でも結構めんどくさいところもあってGraphQLを使ってるので、型定義がだるい...
 
-そんな煩わしさを解決する為に、[GraphQL Code Generator](https://graphql-code-generator.com/)を使った。これはGraphQL schemaを元にTypeScriptの型定義を自動で生成してくれる。Gatsby自体Reactコンポーネント内のGraphQLクエリからスキーマを自動生成してくれるので相性抜群！！ここら辺のことは、また記事にしたいと思う。
+そんな煩わしさを解決する為に、[GraphQL Code Generator](https://graphql-code-generator.com/)を使った。これはGraphQL schemaを元にTypeScriptの型定義を自動で生成してくれる。Gatsby自体スキーマを自動生成してくれるので相性抜群！！ここら辺のことは、また記事にしたいと思う。
 
 ### GitHub Actions
 ![GitHub Actions](blog-start-github-actions.png)

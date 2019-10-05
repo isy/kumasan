@@ -31,13 +31,16 @@ yarn add -D @graphql-codegen/cli @graphql-codegen/typescript @graphql-codegen/ty
 `@graphql-codegen/typescript-operations`はデベロッパが定義したQuery等のGraphQLドキュメントを元に型を生成してくれるプラグイン
 
 他にも
+
 - `@graphql-codegen/typescript-resolvers` - resolve関数の型を生成
 - `@graphql-codegen/typescript-mongodb` - MongoDBモデルを元に型を生成
+
+
 
 といったプラグインが多くあり、[ここ](https://graphql-code-generator.com/docs/plugins/)に良い感じにプラグインがまとまってるので、気になるかたは参考にしてみるといいかも
 
 #### 構成ファイル
-次に構成ファイルの`codegen.yml`をプロジェクトに作成します。
+次に構成ファイルのcodegen.ymlをプロジェクトに作成します。
 
 構成ファイルは`codegen.yml`または`codegen.json`を自動検出してくれる
 

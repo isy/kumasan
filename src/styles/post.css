@@ -103,6 +103,17 @@ h1 {
     }
   }
 
+  p, ul {
+    code {
+      background: #f5f5fa !important;
+      hyphens: none;
+      white-space: pre-wrap;
+      overflow-wrap: normal;
+      padding: 2px 4px !important;
+      color: rgba(84, 104, 255, 0.61);
+    }
+  }
+
   img {
     margin: 0 auto;
     display: block;
@@ -257,7 +268,6 @@ h1 {
           border-bottom: 1px solid #5592ff;
         }
         td {
-          text-align: center;
           border-left: 1px solid #5592ff;
           padding: 10px 15px;
           &:first-child {

@@ -97,7 +97,7 @@ import { graphql } from 'gatsby'
 
 import { PostsQuery } from '../graphqlTypes'
 
-import Artile from '../components/Artile'
+import Article from '../components/Article'
 
 type Props = {
   data: PostsQuery
@@ -106,7 +106,7 @@ type Props = {
 const HogePero: React.FC<Props> = ({ data }) => (
   <>
     {data.allMarkdownRemark.edges.map(({ node }) => (
-      <Artile key={node.id} title={node.frontmatter.title} />
+      <Article key={node.id} title={node.frontmatter.title} />
     ))}
   </>
 )

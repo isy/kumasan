@@ -1,6 +1,6 @@
 ---
 title: 'Gatsby × TypeScriptでGraphQL Code Generatorを使うと幸せになれる'
-date: '2019-10-01'
+date: '2019-10-05'
 category: 'dev'
 thumb: 'gatsby-graphql-code-generator-thumb.png'
 ---
@@ -23,12 +23,12 @@ GatsbyではGraphQLスキーマを自動生成してくれているので非常�
 ## 使いかた
 
 #### インストール
-まず、CLIと依存するパッケージをインストールします
+まず、CLIと依存するパッケージをインストール
 ```bash:title=bash
 yarn add -D @graphql-codegen/cli @graphql-codegen/typescript @graphql-codegen/typescript-operations
 ```
 
-`@graphql-codegen/typescript-operations`はデベロッパが定義したQuery等のGraphQLドキュメントを元に型を生成してくれるプラグインです。
+`@graphql-codegen/typescript-operations`はデベロッパが定義したQuery等のGraphQLドキュメントを元に型を生成してくれるプラグイン
 
 他にも
 - `@graphql-codegen/typescript-resolvers` - resolve関数の型を生成
@@ -39,7 +39,7 @@ yarn add -D @graphql-codegen/cli @graphql-codegen/typescript @graphql-codegen/ty
 #### 構成ファイル
 次に構成ファイルの`codegen.yml`をプロジェクトに作成します。
 
-構成ファイルは`codegen.yml`または`codegen.json`を自動検出してくれます
+構成ファイルは`codegen.yml`または`codegen.json`を自動検出してくれる
 
 ```yml:title=codegen.yml
 overwrite: true
@@ -55,4 +55,81 @@ generates:
 
 ```
 
-構成ファイルは`graphql-codegen init`コマンドでも作成することができます。
+また構成ファイルはCLIでも作成することができるのでお好きな方で！
+```bash:title=bash
+$ graphql-codegen init
+```
+
+#### npmスクリプトの設定
+グローバルインストールしてCLIを直接使うこともできるが、npmスクリプトとして追加した方がグローバルインストールしなくて済むので登録していきます。
+
+ちなみに公式もnpmスクリプトから呼び出すことをオススメしている
+
+```json:title=package.json
+{
+  "scripts": {
+    "gql-codegen": "graphql-codegen --config codegen.yml",
+  }
+}
+```
+
+`--config`オプションでconfigファイルを指定することができる。
+前述の通り今回は指定しなくてもOK
+
+#### 型定義ファイルの自動生成
+ ```bash:title=bash
+ $ yarn gql-codegen
+ ```
+
+あとはサーバ起動時に上記コマンドを実行することでGraphQLスキーマを元に今回の設定だと`graphqlTypes.ts`という型定義ファイルができる🎉
+
+## 結果
+実際に使ってみると`@graphql-codegen/typescript-operations`を使用しているので以下の例だとPostsクエリを元に`PostsQuery`という型ができている！
+
+これで幸せになれました☺️
+
+```tsx:title=HogePero.tsx
+import React from 'react'
+import { graphql } from 'gatsby'
+
+import { PostsQuery } from '../graphqlTypes'
+
+import Artile from '../components/Artile'
+
+type Props = {
+  data: PostsQuery
+}
+
+const HogePero: React.FC<Props> = ({ data }) => (
+  <>
+    {data.allMarkdownRemark.edges.map(({ node }) => (
+      <Artile key={node.id} title={node.frontmatter.title} />
+    ))}
+  </>
+)
+
+export const query = graphql`
+  query Posts {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+          }
+        }
+      }
+    }
+  }
+`
+
+export default HogePero
+```
+
+
+#### さいごに
+GraphQL Code GeneratorとGatsbyの組み合わせはサイコー
+
+みんな幸せになってこうな

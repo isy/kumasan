@@ -18,14 +18,14 @@ thumb: 'blog-start-thumb.png'
 ## ブログの技術的なお話
 ここからは技術のお話。
 
-このブログは[Gatsby](https://www.gatsbyjs.org/)で作った。GatsbyはReact製の静的サイトジェネレータで、Markdownでらくーに記事を書くこともできるし、HeadlessCMSを使ってJAMSstackな構成でイマドキのイケイケブログみたいなこともできる。 そうやって作った記事をGraphQLクエリを通じて組み込める。プラグインも豊富でカスタマイズもしやすいのでサイコーって感じ。
+このブログは[Gatsby](https://www.gatsbyjs.org/)で作った。GatsbyはReact製の静的サイトジェネレータで、Markdownでらくーに記事を書くこともできるし、HeadlessCMSを使ってJAMStackな構成でイマドキのイケイケブログみたいなこともできる。 そうやって作った記事をGraphQLクエリを通じて組み込める。プラグインも豊富でカスタマイズもしやすいのでサイコーって感じ。
 
 ### Gatsby × TypeScript
 やっぱり静的型付けはDX最高なのでTypeScriptにした。
 
 でも結構めんどくさいところもあってGraphQLを使ってるので、型定義がだるい...
 
-そんな煩わしさを解決する為に、[GraphQL Code Generator](https://graphql-code-generator.com/)を使った。これはGraphQL schemaを元にTypeScriptの型定義を自動で生成してくれる。Gatsby自体Reactコンポーネント内のGraphQLクエリからスキーマを自動生成してくれるので相性抜群！！ここら辺のことは、また記事にしたいと思う。
+そんな煩わしさを解決する為に、[GraphQL Code Generator](https://graphql-code-generator.com/)を使った。これはGraphQL schemaを元にTypeScriptの型定義を自動で生成してくれる。Gatsby自体スキーマを自動生成してくれるので相性抜群！！ここら辺のことは、また記事にしたいと思う。
 
 ### GitHub Actions
 ![GitHub Actions](blog-start-github-actions.png)

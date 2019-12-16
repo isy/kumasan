@@ -81,7 +81,7 @@ describe('Check type definitions', () => {
   it('Condition', () => {
     let animal: Condition<'kuma', 'inu' | 'neko'>
 
-    expectType<never>(animal)
+    expectType<unknown>(animal)
   })
 });
 ```

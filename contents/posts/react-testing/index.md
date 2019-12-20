@@ -5,7 +5,13 @@ category: 'dev'
 thumb: 'react-hooks-testing.png'
 ---
 
-以前書いた[「Hooks時代のユニットテスト」](https://qiita.com/isy/items/0b40b50fad21a8e6c863)が結構反響があって、数ヶ月試してみて個人的なReactHooksにおけるユニットテストのベストを見つけたので、Testing Library・Jestを使う方法を紹介します。
+この記事は[「DMMグループ Advent Calendar 2019」](https://qiita.com/advent-calendar/2019/dmm)21日目の記事です。
+
+フロントエンドエンジニアは数年前に比べ、技術の幅が広がったことにより担当するべき作業も増えてきています。
+
+テストもその中の一つです。フロントエンドのテストは実装に対するユニットテストだけでなく、コンポーネントのユニットテスト、e2eテスト、Visual Regression Testと考えることが多くあります。
+
+その中で以前書いた[「Hooks時代のユニットテスト」](https://qiita.com/isy/items/0b40b50fad21a8e6c863)というReact Hooksのテストに関する記事が結構反響があり、数ヶ月テストを運用してみて、個人的なReact Hooksにおけるユニットテストをどうすべきかを考えたので、Testing Library・Jestを使う方法で紹介します。
 
 TypeScriptがデファクトになりつつあるので、今回はTypeScriptで書いてるよ！
 
@@ -22,6 +28,8 @@ enzymeはHooksと相性が悪く、Shallow Render時に`useEffect`を呼び出�
 
 #### React Testing Library
 React Testing Libraryはユーザがコンポーネントを使用するようにテストが設計され`react-dom/test-utils`をラップしたライブラリです。
+
+enzymeのように実装をテストするライブラリに比べるとシンプルに書くことができ、コンポーネントのテストという観点でいうと個人的にはenzymeよりReact Testing Libraryの方が合っているように感じます。
 
 
 ### ユニットテスト

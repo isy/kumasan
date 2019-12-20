@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'くまの部屋',
-    description: 'くまの個人ブログ。エンジニアリングからビジネス・デザインなことまで様々かくよ',
+    title: 'Kumasan',
+    description: 'Kumaの個人ブログ。エンジニアリングからビジネス・デザインなことまで思ったことを様々好き勝手にかくよ',
     url: `https://kumaaaaa.com`,
     siteUrl: `https://kumaaaaa.com`,
   },

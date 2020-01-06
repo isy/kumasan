@@ -5,7 +5,7 @@ category: 'dev'
 thumb: 'github-actions-danger-swiftlint.png'
 ---
 
-GitHub ActionsでDanger + Swiftlintで自動コードレビューできるようにしたので記事にしました。
+GitHub ActionsでDanger + SwiftLintで自動コードレビューできるようにしたので記事にしました。
 
 Dangerとはなんぞやという人は[こちら](https://github.com/danger/danger)をどうぞ
 

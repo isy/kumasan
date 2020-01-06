@@ -1,5 +1,5 @@
 ---
-title: 'GitHub ActionsでDanger+Swiftlint'
+title: 'GitHub ActionsでDanger+SwiftLint'
 date: '2020-01-06'
 category: 'dev'
 thumb: 'github-actions-danger-swiftlint.png'

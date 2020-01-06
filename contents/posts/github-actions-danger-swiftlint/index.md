@@ -7,6 +7,8 @@ thumb: 'github-actions-danger-swiftlint.png'
 
 GitHub ActionsでDanger + Swiftlintで自動コードレビューできるようにしたので記事にしました。
 
+Dangerとはなんぞやという人は[こちら](https://github.com/danger/danger)をどうぞ
+
 ### Motivation
 そもそもなぜCircleCIとかBitriseではなく、GitHub ActionsでDangerを動かすのが良いのかというと**アカウントを用意しなくていい**というところ。
 今まで外部CIを使うと、Bot用のアカウントを用意するか自分のGitHubアカウントを使ってBotにコメントさせるかで全然イケてなかった。

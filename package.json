@@ -67,7 +67,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "gql-codegen": "graphql-codegen --config codegen.yml",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json}\"",
     "lint": "eslint --ext .js,.jsx,.tsx,.ts --ignore-path .gitignore .",
     "lint:fix": "eslint --ext .js,.jsx,.tsx,.ts --fix --ignore-path .gitignore .",
     "start": "npm run develop",

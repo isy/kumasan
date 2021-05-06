@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { graphql, Link } from 'gatsby'
 import styled from '@emotion/styled'
 import { JsonLd } from 'react-schemaorg'
@@ -35,9 +35,14 @@ const PostTemplate: React.FC<Props> = ({ data }) => {
 
   const { resizeS, resizeM, resizeL } = thumb.childImageSharp
 
+  const openGraphImage = useMemo(() => {
+    const encodeTitle = encodeURIComponent(title)
+    return `https://res.cloudinary.com/kuma9ma/image/upload/c_fit,l_text:notosans.otf_60:${encodeTitle},co_rgb:212D50,w_1000,x_0/v1620316938/kuma-ogp.png`
+  }, [title])
+
   return (
     <Layout>
-      <SEO title={title} description={excerpt} image={resizeS.src} />
+      <SEO title={title} description={excerpt} image={openGraphImage} />
       <JsonLd<BreadcrumbList> item={{
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',

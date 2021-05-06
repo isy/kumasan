@@ -29,7 +29,7 @@ const SEO: React.FC<Props> = ({ isRoot = false, description, title, image, lang 
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const ogImage = `${site.siteMetadata.url}` + (image || OGPImage)
+  const ogImage =  image ?? site.siteMetadata.url + OGPImage
 
   return (
     <Helmet

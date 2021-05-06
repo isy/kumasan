@@ -25,6 +25,7 @@ const CategoryTemplate: React.FC<Props> = ({ data, pageContext: { category } }) 
             frontmatter: {
               title,
               date,
+              category,
               thumb: {
                 childImageSharp: { resize },
               },
@@ -35,9 +36,8 @@ const CategoryTemplate: React.FC<Props> = ({ data, pageContext: { category } }) 
               key={node.id}
               title={title}
               date={date}
-              to={`/${node.fields.slug}`}
-              imgAlt=""
-              imgsrc={resize.src}
+              to={node.fields.slug}
+              category={category}
             />
           )
         })}
@@ -88,14 +88,10 @@ const Container = styled.div`
 `
 
 const Artile = styled(Card)`
-  margin: 10px 0 20px 0;
-  width: 47%;
-  &:first-of-type {
-    width: 100%;
-    max-width: 100%;
-    font-size: 22px;
-    margin: 0;
-  }
+  margin: 0 0 16px 0;
+  width: 100%;
+  display: inline-block;
+  font-size: 18px;
 
   @media screen and (max-width: 480px) {
     width: 100%;

@@ -2,86 +2,93 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 
+import colors from '../utils/colors'
 import ClockIcon from '../images/clock.svg'
+import Right from '../images/right.svg'
 
 type Props = {
   to: string
   title: string
   date: string
-  imgsrc: string
-  imgAlt: string
+  category: string
   className?: string
+}
+
+enum CategoryType {
+  DEV = 'dev',
+  SELF = 'self',
+  OTHER = 'other',
 }
 
 const Card: React.FC<Props> = ({
   to,
   title,
   date,
-  imgsrc,
-  imgAlt,
+  category,
   className,
 }) => (
   <Link to={to} className={className}>
     <Wrapper>
-      <Hero>
-        <HeroImg src={imgsrc} alt={imgAlt} />
-      </Hero>
-      <Meta>
-        <Title>{title}</Title>
-        <DateTime>
-          <Clock src={ClockIcon} alt="clock" />
-          <Time>{date}</Time>
-        </DateTime>
-      </Meta>
+      <Inner>
+        <Kind category={category as CategoryType} />
+        <Meta>
+          <Title>{title}</Title>
+          <DateTime>
+            <Clock src={ClockIcon} alt="clock" />
+            <Time>{date}</Time>
+          </DateTime>
+        </Meta>
+      </Inner>
+      <RightArrow src={Right} />
     </Wrapper>
   </Link>
 )
 
 const Wrapper = styled.article`
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  justify-content: space-between;
   background: #fff;
-  border-radius: 10px;
+  border-radius: 16px;
   cursor: pointer;
   transition: 0.3s ease-in-out;
   &:hover {
-    // opacity: 0.9;
     box-shadow: 0 2px 15px rgba(202, 202, 202, 0.44);
   }
 `
 
-const Hero = styled.div`
-  background: linear-gradient(
-    rgb(255, 255, 255) 0%,
-    rgb(248, 248, 248) 25%,
-    rgb(212, 212, 212) 50%,
-    rgb(177, 177, 177) 75%,
-    rgb(73, 73, 73) 100%
-  );
-  height: 200px;
+const Inner = styled.div`
   display: flex;
-  border-radius: 10px 10px 0 0;
-  width: 100%;
-  @media screen and (max-width: 480px) {
-    height: 150px;
-  }
+  flex-wrap: nowrap;
 `
 
-const HeroImg = styled.img`
-  border-radius: 10px 10px 0 0;
-  object-fit: cover;
-  width: 100%;
-  object-position: 50% 50%;
-  opacity: 0.8;
+const Kind = styled.div`
+  width: 8px;
+  height: 24px;
+  border-radius: 8px;
+  margin: 16px 15px;
+  flex-shrink: 0;
+  background: ${({ category }: { category: CategoryType }) => {
+    switch(category) {
+      case CategoryType.DEV:
+        return 'linear-gradient(135deg, #f75858 0%,#ea89a9 62%,#ff69d4 100%)'
+      case CategoryType.SELF:
+        return 'linear-gradient(135deg, #51d6b4 0%,#91f5db 62%,#51d652 100%)'
+      case CategoryType.OTHER:
+        return 'linear-gradient(135deg, #d060f1 0%,#e098f5 62%,#cc40f5 100%);'
+      default:
+        return colors.ebony
+    }
+  }};
 `
 
 const Meta = styled.div`
   border-radius: 0 0 10px 10px;
   margin: 10px 15px;
   position: relative;
-  height: 150px;
+  height: 100px;
   @media screen and (max-width: 480px) {
-    height: 100px;
+    height: 90px;
   }
 `
 
@@ -91,7 +98,7 @@ const Title = styled.p`
   letter-spacing: 0.15rem;
   font-weight: 600;
   @media screen and (max-width: 480px) {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 `
 
@@ -111,6 +118,11 @@ const DateTime = styled.div`
 const Clock = styled.img`
   width: 12px;
   margin: 0 1px 0 0;
+`
+
+const RightArrow = styled.img`
+  width: 16px;
+  margin: 0 8px 0 0;
 `
 
 const Time = styled.span`

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { graphql, Link } from 'gatsby'
 import styled from '@emotion/styled'
 import { JsonLd } from 'react-schemaorg'
@@ -31,13 +31,16 @@ const PostTemplate: React.FC<Props> = ({ data }) => {
     site: { siteMetadata },
     markdownRemark: { html, excerpt, fields, frontmatter },
   } = data
-  const { title, category, date, thumb } = frontmatter
+  const { title, category, date } = frontmatter
 
-  const { resizeS, resizeM, resizeL } = thumb.childImageSharp
+  const openGraphImage = useMemo(() => {
+    const encodeTitle = encodeURIComponent(title)
+    return `https://res.cloudinary.com/kuma9ma/image/upload/c_fit,l_text:notosans.otf_60:${encodeTitle},co_rgb:212D50,w_1000,x_0/v1620316938/kuma-ogp.png`
+  }, [title])
 
   return (
     <Layout>
-      <SEO title={title} description={excerpt} image={resizeS.src} />
+      <SEO title={title} description={excerpt} image={openGraphImage} />
       <JsonLd<BreadcrumbList> item={{
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
@@ -74,16 +77,18 @@ const PostTemplate: React.FC<Props> = ({ data }) => {
       <Wrapper>
         <Contents>
           <ArtileCover>
-            <Heading>
-              <Time>
-                <Clock src={ClockIcon} alt="clock" />
-                <span>{date}</span>
-              </Time>
+            <ArtileCoverInner>
+              <Spacer />
+              <Heading>
+                <Time>
+                  <Clock src={ClockIcon} alt="clock" />
+                  <span>{date}</span>
+                </Time>
 
-              <Title>{title}</Title>
-              <CategoryLink to={`/categories/${category}`} type={category as CategoryType}>{category.toUpperCase()}</CategoryLink>
-            </Heading>
-            <HeroImg src={resizeS.src} srcM={resizeM.src} srcL={resizeL.src} />
+                <Title>{title}</Title>
+                <CategoryLink to={`/categories/${category}`} type={category as CategoryType}>{category.toUpperCase()}</CategoryLink>
+              </Heading>
+            </ArtileCoverInner>
           </ArtileCover>
 
           <Body>
@@ -120,30 +125,6 @@ export const query = graphql`
         title
         category
         date(formatString: "YYYY.MM.DD")
-        thumb {
-          childImageSharp {
-            resizeS: resize(width: 400) {
-              src
-              height
-              width
-            }
-            resizeM: resize(width: 700) {
-              src
-              height
-              width
-            }
-            resizeL: resize(width: 1000) {
-              src
-              height
-              width
-            }
-            original {
-              height
-              src
-              width
-            }
-          }
-        }
       }
     }
   }
@@ -166,13 +147,11 @@ const Contents = styled.div`
 
 const ArtileCover = styled.section`
   width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  height: 400px;
   margin-bottom: 40px;
   @media screen and (max-width: 1099px) {
-    flex-wrap: wrap-reverse;
     height: auto;
   }
   @media screen and (max-width: 499px) {
@@ -180,12 +159,25 @@ const ArtileCover = styled.section`
   }
 `
 
+const ArtileCoverInner = styled.div`
+  display: flex;
+`
+
+const Spacer = styled.div`
+  flex-basis: 70px;
+  @media screen and (max-width: 599px) {
+    display: none;
+  }
+`
+
 const Heading = styled.div`
-  width: 50%;
-  padding: 50px;
+  padding: 50px 0 0 0;
+  width: 85%;
+  max-width: 900px;
+  margin: 0 auto;
+
   @media screen and (max-width: 1099px) {
-    width: 90%;
-    padding: 50px 50px 0 50px;
+    padding: 50px 0 0 0;
   }
   @media screen and (max-width: 499px) {
     padding: 20px 0 0 0;

@@ -2,7 +2,6 @@
 title: 'Go Conference2019 Autumnまとめ'
 date: '2019-10-29'
 category: 'other'
-thumb: '2019-gocon-autumn.png'
 ---
 
 [Go Conference2019 Autumn](https://gocon.connpass.com/event/148602/)に参加してきたʕ◔ϖ◔ʔ 

@@ -34,7 +34,7 @@ const IndexPage: React.FC<Props> = ({ data }) => (
               key={node.id}
               title={title}
               date={date}
-              to={`/${node.fields.slug}`}
+              to={`${node.fields.slug}`}
               imgAlt=""
               imgsrc={resize.src}
             />

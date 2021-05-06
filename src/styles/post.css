@@ -22,7 +22,7 @@ h1 {
 }
 
 .md {
-  h2 {
+  & h2 {
     /* border-left: 5px solid #5592ff;
     border-bottom: 1px dotted #5592ff; */
     padding: 6px 0 6px 16px;
@@ -50,7 +50,7 @@ h1 {
     }
   }
 
-  h3 {
+  & h3 {
     font-size: 1.45em;
     padding: 6px 0 6px 6px;
     margin: 40px 0 10px;
@@ -61,7 +61,7 @@ h1 {
     }
   }
 
-  h4 {
+  & h4 {
     font-size: 1.2em;
     font-weight: 600;
     padding: 4px 0 4px 22px;
@@ -93,7 +93,7 @@ h1 {
     }
   }
 
-  p {
+  & p {
     font-size: 1.05em;
     letter-spacing: 0.05em;
     line-height: 2;
@@ -105,8 +105,8 @@ h1 {
     }
   }
 
-  p, ul {
-    code {
+  & p, & ul {
+    & code {
       background: #f5f5fa !important;
       hyphens: none;
       white-space: pre-wrap;
@@ -116,11 +116,11 @@ h1 {
     }
   }
 
-  pre {
+  & pre {
     font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
   }
 
-  img {
+  & img {
     margin: 0 auto;
     display: block;
     width: 100%;
@@ -134,21 +134,21 @@ h1 {
     }
   }
 
-  b,
-  strong {
+  & b,
+  & strong {
     font-weight: bolder;
     color: #151515;
     background: linear-gradient(transparent 70%,#fdec4f 0);
   }
 
-  em {
+  & em {
     font-style: italic;
   }
 
-  ul {
+  & ul {
     padding: 1em;
 
-    p {
+    & p {
       margin: 0;
     }
 
@@ -157,7 +157,7 @@ h1 {
       position: relative;
       list-style: none;
       padding-left: 15px;
-      ul {
+      & ul {
         padding: 5px 0 0 10px;
       }
       &:before {
@@ -177,7 +177,7 @@ h1 {
     }
   }
 
-  ol {
+  & ol {
     padding: 10px 0 0 40px;
     counter-reset: num 0;
     @media screen and (max-width: 499px) {
@@ -206,11 +206,11 @@ h1 {
     }
   }
 
-  a {
+  & a {
     color: #5592ff !important;
   }
 
-  blockquote {
+  & blockquote {
     font-style: italic;
     border-left: 4px solid rgba(173, 189, 218, 0.35);
     padding: 0px 0px 0px 15px;
@@ -221,7 +221,7 @@ h1 {
     }
   }
 
-  table {
+  & table {
     border: 1px solid #5592ff;
     min-width: 50%;
     max-width: 95%;
@@ -255,22 +255,22 @@ h1 {
         white-space: nowrap;
       }
     } */
-    thead {
-      tr {
+    & thead {
+      & tr {
         border-bottom: 1px solid #5592ff;
         background: #5592ff;
         color: #fff;
-        th {
+        & th {
           padding: 10px 15px;
         }
       }
     }
-    tbody {
-      tr {
+    & tbody {
+      & tr {
         @media screen and (min-width: 500px) {
           border-bottom: 1px solid #5592ff;
         }
-        td {
+        & td {
           border-left: 1px solid #5592ff;
           padding: 10px 15px;
           &:first-child {

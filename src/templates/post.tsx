@@ -74,16 +74,18 @@ const PostTemplate: React.FC<Props> = ({ data }) => {
       <Wrapper>
         <Contents>
           <ArtileCover>
-            <Heading>
-              <Time>
-                <Clock src={ClockIcon} alt="clock" />
-                <span>{date}</span>
-              </Time>
+            <ArtileCoverInner>
+              <Spacer />
+              <Heading>
+                <Time>
+                  <Clock src={ClockIcon} alt="clock" />
+                  <span>{date}</span>
+                </Time>
 
-              <Title>{title}</Title>
-              <CategoryLink to={`/categories/${category}`} type={category as CategoryType}>{category.toUpperCase()}</CategoryLink>
-            </Heading>
-            <HeroImg src={resizeS.src} srcM={resizeM.src} srcL={resizeL.src} />
+                <Title>{title}</Title>
+                <CategoryLink to={`/categories/${category}`} type={category as CategoryType}>{category.toUpperCase()}</CategoryLink>
+              </Heading>
+            </ArtileCoverInner>
           </ArtileCover>
 
           <Body>
@@ -166,13 +168,11 @@ const Contents = styled.div`
 
 const ArtileCover = styled.section`
   width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  height: 400px;
   margin-bottom: 40px;
   @media screen and (max-width: 1099px) {
-    flex-wrap: wrap-reverse;
     height: auto;
   }
   @media screen and (max-width: 499px) {
@@ -180,12 +180,25 @@ const ArtileCover = styled.section`
   }
 `
 
+const ArtileCoverInner = styled.div`
+  display: flex;
+`
+
+const Spacer = styled.div`
+  flex-basis: 70px;
+  @media screen and (max-width: 599px) {
+    display: none;
+  }
+`
+
 const Heading = styled.div`
-  width: 50%;
-  padding: 50px;
+  padding: 50px 0 0 0;
+  width: 85%;
+  max-width: 900px;
+  margin: 0 auto;
+
   @media screen and (max-width: 1099px) {
-    width: 90%;
-    padding: 50px 50px 0 50px;
+    padding: 50px 0 0 0;
   }
   @media screen and (max-width: 499px) {
     padding: 20px 0 0 0;

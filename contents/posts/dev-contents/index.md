@@ -2,7 +2,6 @@
 title: 'Devカテゴリ'
 date: '2019-09-28'
 category: 'dev'
-thumb: 'dev-contents-thumb.png'
 ---
 
 

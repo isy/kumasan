@@ -31,9 +31,7 @@ const PostTemplate: React.FC<Props> = ({ data }) => {
     site: { siteMetadata },
     markdownRemark: { html, excerpt, fields, frontmatter },
   } = data
-  const { title, category, date, thumb } = frontmatter
-
-  const { resizeS, resizeM, resizeL } = thumb.childImageSharp
+  const { title, category, date } = frontmatter
 
   const openGraphImage = useMemo(() => {
     const encodeTitle = encodeURIComponent(title)
@@ -127,30 +125,6 @@ export const query = graphql`
         title
         category
         date(formatString: "YYYY.MM.DD")
-        thumb {
-          childImageSharp {
-            resizeS: resize(width: 400) {
-              src
-              height
-              width
-            }
-            resizeM: resize(width: 700) {
-              src
-              height
-              width
-            }
-            resizeL: resize(width: 1000) {
-              src
-              height
-              width
-            }
-            original {
-              height
-              src
-              width
-            }
-          }
-        }
       }
     }
   }

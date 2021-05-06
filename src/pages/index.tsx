@@ -25,9 +25,6 @@ const IndexPage: React.FC<Props> = ({ data }) => (
               title,
               date,
               category,
-              thumb: {
-                childImageSharp: { resize },
-              },
             },
           } = node
           return (
@@ -60,14 +57,6 @@ export const query = graphql`
           frontmatter {
             title
             category
-            thumb {
-              childImageSharp {
-                resize(width: 500) {
-                  src
-                  width
-                }
-              }
-            }
             date(formatString: "YYYY.MM.DD")
           }
           excerpt

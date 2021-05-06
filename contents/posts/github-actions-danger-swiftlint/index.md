@@ -2,7 +2,6 @@
 title: 'GitHub ActionsでDanger+SwiftLint'
 date: '2020-01-06'
 category: 'dev'
-thumb: 'github-actions-danger-swiftlint.png'
 ---
 
 GitHub ActionsでDanger + SwiftLintで自動コードレビューできるようにしたので記事にしました。

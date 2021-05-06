@@ -26,9 +26,6 @@ const CategoryTemplate: React.FC<Props> = ({ data, pageContext: { category } }) 
               title,
               date,
               category,
-              thumb: {
-                childImageSharp: { resize },
-              },
             },
           } = node
           return (
@@ -62,14 +59,6 @@ export const query = graphql`
           frontmatter {
             title
             category
-            thumb {
-              childImageSharp {
-                resize(width: 200) {
-                  src
-                  width
-                }
-              }
-            }
             date(formatString: "YYYY.MM.DD")
           }
           excerpt

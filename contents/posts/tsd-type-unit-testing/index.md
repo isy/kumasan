@@ -2,7 +2,6 @@
 title: 'tsdでTypeScriptの型定義とテストで戦う'
 date: '2019-12-16'
 category: 'dev'
-thumb: 'ts-type-unit-testing.png'
 ---
 
 この記事は[TypeScript Advent Calendar 2019](https://qiita.com/advent-calendar/2019/typescript) の 16日目の記事です。

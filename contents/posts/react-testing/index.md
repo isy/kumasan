@@ -2,7 +2,6 @@
 title: 'React Hooks Testing'
 date: '2019-12-20'
 category: 'dev'
-thumb: 'react-hooks-testing.png'
 ---
 
 この記事は[「DMMグループ Advent Calendar 2019」](https://qiita.com/advent-calendar/2019/dmm)21日目の記事です。

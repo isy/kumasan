@@ -21,9 +21,9 @@ const Profile: React.FC<Props> = ({ className }) => (
       <Desc>
         <Name>くま</Name>
         <Bio>
-          <p>フロントエンドエンジニア👨‍💻サーバサイドもちょっと書けるよ</p>
+          <p>Web Dev.👨‍💻</p>
           <p>イケてるエンジニア目指してるよ</p>
-          <p><br />最近は昆布と旅行雑誌🏄‍♀️に絶賛ハマり中</p>
+          <p><br />最近は昆布と旅行雑誌🏄‍♀️にハマり中</p>
         </Bio>
         <SocialList>
           <a href="https://github.com/isy" target="_blank" rel="noopener noreferrer" >

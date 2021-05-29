@@ -98,7 +98,19 @@ pre[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: #4bb1ff; /* blue */
+	background-color: rgb(247 88 88 / 18%);
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted
+.token.prefix  {
+	color: #f75858;
+  font-weight: 600;
 }
 
 .token.selector,
@@ -108,7 +120,19 @@ pre[class*="language-"] {
 .token.builtin,
 .token.url,
 .token.inserted {
-	color: #b9986c; /* cyan */
+  background-color: rgb(81 214 82 / 18%);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.url,
+.token.inserted
+.token.prefix {
+	color: #51d652;
+  font-weight: 600;
 }
 
 .token.entity {

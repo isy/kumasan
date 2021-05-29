@@ -231,29 +231,7 @@ h1 {
     @media screen and (max-width: 800px) {
       min-width: 90%;
     }
-    /* @media screen and (max-width: 499px) {
-      width: 100%;
-      table-layout: fixed;
 
-      th,
-      td {
-        display: block;
-      }
-
-      tr {
-        display: inline-block;
-      }
-      thead {
-        display: block;
-        float: left;
-      }
-
-      tbody {
-        display: block;
-        overflow-x: scroll;
-        white-space: nowrap;
-      }
-    } */
     & thead {
       & tr {
         border-bottom: 1px solid #5592ff;
